@@ -1,0 +1,15 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+.travis.yml
+.Renviron
+data_raw
+data_csv
+data_geojson
+data_topojson
+data_processing
+dev
+docs
+README.Rmd
+README.md
+LICENSE
+.github
