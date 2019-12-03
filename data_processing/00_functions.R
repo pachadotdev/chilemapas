@@ -7,10 +7,6 @@ download_file <- function(x,y) {
   }
 }
 
-extract <- function(x,y) {
-  system(sprintf("7z x -aos %s -oc:%s", x, y))
-}
-
 # geodata custom functions ------------------------------------------------
 
 tidy_sf <- function(x, simplify = TRUE, unit = "commune", keep = 0.05) {
@@ -20,11 +16,9 @@ tidy_sf <- function(x, simplify = TRUE, unit = "commune", keep = 0.05) {
     d <- rmapshaper::ms_simplify(d, keep = keep)
   }
 
-  if (unit == "commune") {
-    names(d) <- c("codigo_region", "nombre_region", "codigo_provincia",
-                  "nombre_provincia", "codigo_comuna", "nombre_comuna",
-                  "shape_length", "shape_area", "geometry")
-  }
+  names(d) <- c("codigo_region", "nombre_region", "codigo_provincia",
+                "nombre_provincia", "codigo_comuna", "nombre_comuna",
+                "shape_length", "shape_area", "geometry")
 
   # fix unofficial ids and asciify strings
 
@@ -32,16 +26,11 @@ tidy_sf <- function(x, simplify = TRUE, unit = "commune", keep = 0.05) {
     codigo_comuna = as.character(d$codigo_comuna),
     codigo_provincia = as.character(d$codigo_provincia),
     codigo_region = as.character(d$codigo_region)
-  ) %>%
-    mutate(
-      codigo_comuna = ifelse(str_length(codigo_comuna) == 1, paste0("0", codigo_comuna), codigo_comuna),
-      codigo_provincia = ifelse(str_length(codigo_provincia) == 1, paste0("0", codigo_provincia), codigo_provincia),
-      codigo_region = ifelse(str_length(codigo_region) == 1, paste0("0", codigo_region), codigo_region)
-    )
+  )
 
-  d$codigo_comuna <- d2$codigo_comuna
-  d$codigo_provincia <- d2$codigo_provincia
-  d$codigo_region <- d2$codigo_region
+  d$codigo_comuna <- str_pad(d2$codigo_comuna, 2, "left", "0")
+  d$codigo_provincia <- str_pad(d2$codigo_provincia, 3, "left", "0")
+  d$codigo_region <- str_pad(d2$codigo_region, 5, "left", "0")
 
   d$nombre_region <- iconv(d$nombre_region, to = "ASCII//TRANSLIT", sub = "")
   d$nombre_region <- str_replace_all(d$nombre_region, "[^[:alnum:]|[:space:]]", "")
@@ -130,30 +119,11 @@ remove_col <- function(x,col) {
 }
 
 move_cols <- function(x, aggregation = "region") {
-  if (aggregation %in% c("region", "province", "commune", "block")) {
-    # if (aggregation == "region") {
-    #   x <- x[,c("region_id", "geometry")]
-    # }
-    # if (aggregation == "province") {
-    #   x <- x[,c("province_id", "region_id", "geometry")]
-    # }
-    if (aggregation == "commune") {
-      x <- x[,c("codigo_comuna", "nombre_comuna", "codigo_provincia", "nombre_provincia", "codigo_region", "nombre_region", "geometry")]
-    }
-    # if (aggregation == "block") {
-    #   x <- x[,c("block_id", "commune_id", "commune_name", "province_id", "province_name", "region_id", "region_name", "geometry")]
-    # }
+  if (aggregation == "commune") {
+    x <- x[,c("codigo_comuna", "nombre_comuna", "codigo_provincia", "nombre_provincia", "codigo_region", "nombre_region", "geometry")]
   } else {
     stop()
   }
 
   return(x)
-}
-
-leading_zeroes <- function(d) {
-  d <- d
-  d$codigo_region <- str_pad(d$codigo_region, 2, "left", "0")
-  d$codigo_provincia <- str_pad(d$codigo_provincia, 3, "left", "0")
-  d$codigo_comuna <- str_pad(d$codigo_comuna, 5, "left", "0")
-  return(d)
 }

@@ -56,41 +56,6 @@ if (!file.exists(territorial_codes_file_csv)) {
   fwrite(territorial_codes, file = territorial_codes_file_csv)
 }
 
-# old_territorial_codes_file <- sprintf("%s/old_territorial_codes.rda", data_dir)
-
-# if (!file.exists(old_territorial_codes_file)) {
-#   old_territorial_codes <- territorial_codes %>%
-#     mutate(
-#       region_id = ifelse(province_id  %in% 161:163, "08", region_id),
-#       province_id = ifelse(province_id  %in% 161:163, "084", province_id),
-#
-#       nombre_region = ifelse(region_id == "08", "Biobio", nombre_region),
-#       nombre_provincia = ifelse(province_id == "084", "Nuble", nombre_provincia)
-#     )
-#
-#   old_commune_id <- tibble(
-#     commune_name = old_communes_map[[8]]$commune_name,
-#     commune_id = old_communes_map[[8]]$commune_id
-#   )
-#
-#   old_territorial_codes <- old_territorial_codes %>%
-#     left_join(old_commune_id, by = "commune_name") %>%
-#     mutate(commune_id.x = ifelse(province_id == "084", commune_id.y, commune_id.x)) %>%
-#     select(-commune_id.y) %>%
-#     rename(commune_id = commune_id.x) %>%
-#     arrange(region_id, province_id)
-#
-#   save(old_territorial_codes, file = old_territorial_codes_file, compress = "xz")
-# } else {
-#   load(old_territorial_codes_file)
-# }
-#
-# old_territorial_codes_file_csv <- sprintf("%s/old_territorial_codes.csv", csv_dir)
-#
-# if (!file.exists(old_territorial_codes_file_csv)) {
-#   fwrite(old_territorial_codes, file = old_territorial_codes_file_csv)
-# }
-
 region_attributes <- codigos_territoriales %>%
   select(codigo_region, nombre_region) %>%
   distinct() %>%
@@ -113,14 +78,13 @@ if (!file.exists(communes_map_file)) {
   old_communes_map_file <- sprintf("%s/old_communes_map.rda", data_dir)
 
   old_communes_map <- map(communes_map_shp, ~tidy_sf(.x, simplify = TRUE))
-  # old_communes_map <- map(old_communes_map, ~remove_col(.x, col = "object_id"))
   old_communes_map <- map(old_communes_map, ~move_cols(.x, aggregation = "commune"))
 
   old_communes_map_r08 <- old_communes_map[[8]]
 
-  old_communes_map_bio_bio <- subset(old_communes_map_r08, codigo_provincia != "84")
+  old_communes_map_bio_bio <- subset(old_communes_map_r08, codigo_provincia != "084")
 
-  old_communes_map_nuble <- subset(old_communes_map_r08, codigo_provincia == "84")
+  old_communes_map_nuble <- subset(old_communes_map_r08, codigo_provincia == "084")
 
   d_old_communes_map_bio_bio <- tibble(nombre_comuna = old_communes_map_bio_bio$nombre_comuna) %>%
     left_join(codigos_territoriales) %>%
@@ -170,19 +134,26 @@ if (!file.exists(communes_map_file)) {
 
   mapa_comunas <- map(communes_map, ~leading_zeroes(.x))
 
+  map2(
+    mapa_comunas,
+    sprintf("%s/r%s.geojson", communes_geojson_dir, sort(region_attributes_id_new)),
+    save_as_geojson
+  )
+
+  map2(
+    communes_map,
+    sprintf("%s/r%s.topojson", communes_topojson_dir, sort(region_attributes_id_new)),
+    save_as_topojson
+  )
+
+  mapa_comunas <- do.call(rbind, mapa_comunas)
+
+  mapa_comunas <- mapa_comunas %>%
+    select(codigo_comuna, codigo_provincia, codigo_region, geometry)
+
+  mapa_comunas <- rmapshaper::ms_simplify(mapa_comunas, keep = 0.3)
+
   save(mapa_comunas, file = communes_map_file, compress = "xz")
 } else{
   load(communes_map_file)
 }
-
-map2(
-  mapa_comunas,
-  sprintf("%s/r%s.geojson", communes_geojson_dir, sort(region_attributes_id_new)),
-  save_as_geojson
-)
-
-map2(
-  communes_map,
-  sprintf("%s/r%s.topojson", communes_topojson_dir, sort(region_attributes_id_new)),
-  save_as_topojson
-)

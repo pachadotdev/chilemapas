@@ -1,15 +1,18 @@
 Package: chilemapas
 Type: Package
-Title: Mapas de las Divisiones Administrativas de Chile
+Title: Mapas de las Divisiones Politicas y Administrativas de Chile
 Version: 0.1
 Authors@R: c(
     person("Mauricio", "Vargas", role = c("aut", "cre"),
     email = "mvargas@dcc.uchile.cl"),
-    person("Roberto", "Salas", role = "ctb", email = "rosalas@uc.cl"),
-    person("Joshua", "Kunst", role = "ctb", email = "jbkunst@gmail.com"),
+    person("Roberto", "Salas", role = "ctb"),
+    person("Joshua", "Kunst", role = "ctb"),
+    person("Juan", "Correa", role = "dtc"),
     person(family = "Instituto Nacional de Estadisticas (INE)",
     role = "cph"),
     person(family = "Subsecretaria de Desarrollo Regional (SUBDERE)",
+    role = "cph"),
+    person(family = "Biblioteca del Congreso Nacional de Chile (BCN)",
     role = "cph")
     )
 Description: Mapas terrestres con topologias simplificadas. Estos mapas no 
@@ -23,13 +26,10 @@ Encoding: UTF-8
 LazyData: true
 VignetteBuilder: knitr
 RoxygenNote: 6.1.1
-Depends: sf, R(>= 3.5.0)
+Depends: R(>= 3.5.0)
+Imports: sf, rmapshaper, dplyr, magrittr, stringr, rlang
 Suggests: 
     knitr,
     rmarkdown,
-    dplyr,
-    tidyr,
-    forcats,
     ggplot2,
-    rmapshaper,
     testthat

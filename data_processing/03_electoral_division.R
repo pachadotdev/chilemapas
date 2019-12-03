@@ -1,11 +1,6 @@
-# Packages and functions --------------------------------------------------
-
-source("data_processing/00_functions.R")
-source("data_processing/01_download_data.R")
-
 # Electoral division ------------------------------------------------------
 
-electoral_division_file <- sprintf("%s/electoral_division.rda", data_dir)
+electoral_division_file <- sprintf("%s/divisiones_electorales.rda", data_dir)
 
 if (!file.exists(electoral_division_file)) {
   electoral_division_html <- read_html("https://www.bcn.cl/siit/divisionelectoral")
@@ -86,7 +81,7 @@ if (!file.exists(electoral_division_file)) {
   load(electoral_division_file)
 }
 
-electoral_division_file_csv <- sprintf("%s/electoral_division.csv", csv_dir)
+electoral_division_file_csv <- sprintf("%s/divisiones_electorales.csv", csv_dir)
 
 if (!file.exists(electoral_division_file_csv)) {
   fwrite(electoral_division, file = electoral_division_file_csv)

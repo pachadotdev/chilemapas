@@ -1,4 +1,4 @@
 library(testthat)
-library(chilemaps)
+library(chilemapas)
 
-test_check("chilemaps")
+test_check("chilemapas")
