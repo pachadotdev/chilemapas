@@ -21,82 +21,64 @@ tidy_sf <- function(x, simplify = TRUE, unit = "commune", keep = 0.05) {
   }
 
   if (unit == "commune") {
-    names(d) <- c("object_id",
-                  "region_id", "province_id", "commune_id",
-                  "region_name", "province_name", "commune_name",
-                  "shape_length", "shape_area", "geometry")
-  }
-
-  if (unit == "block") {
-    names(d) <- c("region_id", "province_id", "commune_id",
-                  "district_id", "zone_id", "entity_id", "block_id",
-                  "region_name", "province_name", "commune_name",
-                  "geometry")
-  }
-
-  if (unit == "urban_limit") {
-    names(d) <- c("region_id", "province_id", "commune_id",
-                  "region_name", "province_name", "commune_name", "urban_name", "category_name",
+    names(d) <- c("codigo_region", "nombre_region", "codigo_provincia",
+                  "nombre_provincia", "codigo_comuna", "nombre_comuna",
                   "shape_length", "shape_area", "geometry")
   }
 
   # fix unofficial ids and asciify strings
 
   d2 <- tibble(
-    commune_id = as.character(d$commune_id),
-    province_id = as.character(d$province_id),
-    region_id = as.character(d$region_id)
+    codigo_comuna = as.character(d$codigo_comuna),
+    codigo_provincia = as.character(d$codigo_provincia),
+    codigo_region = as.character(d$codigo_region)
   ) %>%
     mutate(
-      commune_id = ifelse(str_length(region_id) == 1, paste0("0", commune_id), commune_id),
-      province_id = ifelse(str_length(region_id) == 1, paste0("0", province_id), province_id),
-      region_id = ifelse(str_length(region_id) == 1, paste0("0", region_id), region_id)
+      codigo_comuna = ifelse(str_length(codigo_comuna) == 1, paste0("0", codigo_comuna), codigo_comuna),
+      codigo_provincia = ifelse(str_length(codigo_provincia) == 1, paste0("0", codigo_provincia), codigo_provincia),
+      codigo_region = ifelse(str_length(codigo_region) == 1, paste0("0", codigo_region), codigo_region)
     )
 
-  d$commune_id <- d2$commune_id
-  d$province_id <- d2$province_id
-  d$region_id <- d2$region_id
+  d$codigo_comuna <- d2$codigo_comuna
+  d$codigo_provincia <- d2$codigo_provincia
+  d$codigo_region <- d2$codigo_region
 
-  d$region_name <- iconv(d$region_name, to = "ASCII//TRANSLIT", sub = "")
-  d$region_name <- str_replace_all(d$region_name, "[^[:alnum:]|[:space:]]", "")
-  d$region_name <- str_to_title(d$region_name)
+  d$nombre_region <- iconv(d$nombre_region, to = "ASCII//TRANSLIT", sub = "")
+  d$nombre_region <- str_replace_all(d$nombre_region, "[^[:alnum:]|[:space:]]", "")
+  d$nombre_region <- str_to_title(d$nombre_region)
 
-  d$province_name <- iconv(d$province_name, to = "ASCII//TRANSLIT", sub = "")
-  d$province_name <- str_replace_all(d$province_name, "[^[:alnum:]|[:space:]]", "")
-  d$province_name <- str_to_title(d$province_name)
+  d$nombre_provincia <- iconv(d$nombre_provincia, to = "ASCII//TRANSLIT", sub = "")
+  d$nombre_provincia <- str_replace_all(d$nombre_provincia, "[^[:alnum:]|[:space:]]", "")
+  d$nombre_provincia <- str_to_title(d$nombre_provincia)
 
-  d$commune_name <- iconv(d$commune_name, to = "ASCII//TRANSLIT", sub = "")
-  d$commune_name <- str_replace_all(d$commune_name, "[^[:alnum:]|[:space:]]", "")
-  d$commune_name <- str_to_title(d$commune_name)
-
-  if (unit == "urban_limit") {
-    d$category_name <- str_to_title(d$category_name)
-  }
+  d$nombre_comuna <- iconv(d$nombre_comuna, to = "ASCII//TRANSLIT", sub = "")
+  d$nombre_comuna <- str_replace_all(d$nombre_comuna, "[^[:alnum:]|[:space:]]", "")
+  d$nombre_comuna <- str_to_title(d$nombre_comuna)
 
   # fix titlecase
 
-  d$region_name <- str_replace_all(d$region_name, " De ", " de ")
-  d$region_name <- str_replace_all(d$region_name, " Del ", " del ")
-  d$region_name <- str_replace_all(d$region_name, " La ", " la ")
-  d$region_name <- str_replace_all(d$region_name, " Los ", " los ")
-  d$region_name <- str_replace_all(d$region_name, " Y ", " y ")
-  d$region_name <- str_replace_all(d$region_name, "Ohiggins", "OHiggins")
+  d$nombre_region <- str_replace_all(d$nombre_region, " De ", " de ")
+  d$nombre_region <- str_replace_all(d$nombre_region, " Del ", " del ")
+  d$nombre_region <- str_replace_all(d$nombre_region, " La ", " la ")
+  d$nombre_region <- str_replace_all(d$nombre_region, " Los ", " los ")
+  d$nombre_region <- str_replace_all(d$nombre_region, " Y ", " y ")
+  d$nombre_region <- str_replace_all(d$nombre_region, "Ohiggins", "OHiggins")
 
-  d$province_name <- str_replace_all(d$province_name, " De ", " de ")
-  d$province_name <- str_replace_all(d$province_name, " Del ", " del ")
-  d$province_name <- str_replace_all(d$province_name, " La ", " la ")
-  d$province_name <- str_replace_all(d$province_name, " Las ", " las ")
-  d$province_name <- str_replace_all(d$province_name, " Los ", " los ")
-  d$province_name <- str_replace_all(d$province_name, " Y ", " y ")
-  d$province_name <- str_replace_all(d$province_name, "Ohiggins", "OHiggins")
+  d$nombre_provincia <- str_replace_all(d$nombre_provincia, " De ", " de ")
+  d$nombre_provincia <- str_replace_all(d$nombre_provincia, " Del ", " del ")
+  d$nombre_provincia <- str_replace_all(d$nombre_provincia, " La ", " la ")
+  d$nombre_provincia <- str_replace_all(d$nombre_provincia, " Las ", " las ")
+  d$nombre_provincia <- str_replace_all(d$nombre_provincia, " Los ", " los ")
+  d$nombre_provincia <- str_replace_all(d$nombre_provincia, " Y ", " y ")
+  d$nombre_provincia <- str_replace_all(d$nombre_provincia, "Ohiggins", "OHiggins")
 
-  d$commune_name <- str_replace_all(d$commune_name, " De ", " de ")
-  d$commune_name <- str_replace_all(d$commune_name, " Del ", " del ")
-  d$commune_name <- str_replace_all(d$commune_name, " La ", " la ")
-  d$commune_name <- str_replace_all(d$commune_name, " Las ", " las ")
-  d$commune_name <- str_replace_all(d$commune_name, " Los ", " los ")
-  d$commune_name <- str_replace_all(d$commune_name, " Y ", " y ")
-  d$commune_name <- str_replace_all(d$commune_name, "Ohiggins", "OHiggins")
+  d$nombre_comuna <- str_replace_all(d$nombre_comuna, " De ", " de ")
+  d$nombre_comuna <- str_replace_all(d$nombre_comuna, " Del ", " del ")
+  d$nombre_comuna <- str_replace_all(d$nombre_comuna, " La ", " la ")
+  d$nombre_comuna <- str_replace_all(d$nombre_comuna, " Las ", " las ")
+  d$nombre_comuna <- str_replace_all(d$nombre_comuna, " Los ", " los ")
+  d$nombre_comuna <- str_replace_all(d$nombre_comuna, " Y ", " y ")
+  d$nombre_comuna <- str_replace_all(d$nombre_comuna, "Ohiggins", "OHiggins")
 
   return(d)
 }
@@ -149,21 +131,29 @@ remove_col <- function(x,col) {
 
 move_cols <- function(x, aggregation = "region") {
   if (aggregation %in% c("region", "province", "commune", "block")) {
-    if (aggregation == "region") {
-      x <- x[,c("region_id", "geometry")]
-    }
-    if (aggregation == "province") {
-      x <- x[,c("province_id", "region_id", "geometry")]
-    }
+    # if (aggregation == "region") {
+    #   x <- x[,c("region_id", "geometry")]
+    # }
+    # if (aggregation == "province") {
+    #   x <- x[,c("province_id", "region_id", "geometry")]
+    # }
     if (aggregation == "commune") {
-      x <- x[,c("commune_id", "commune_name", "province_id", "province_name", "region_id", "region_name", "geometry")]
+      x <- x[,c("codigo_comuna", "nombre_comuna", "codigo_provincia", "nombre_provincia", "codigo_region", "nombre_region", "geometry")]
     }
-    if (aggregation == "block") {
-      x <- x[,c("block_id", "commune_id", "commune_name", "province_id", "province_name", "region_id", "region_name", "geometry")]
-    }
+    # if (aggregation == "block") {
+    #   x <- x[,c("block_id", "commune_id", "commune_name", "province_id", "province_name", "region_id", "region_name", "geometry")]
+    # }
   } else {
     stop()
   }
 
   return(x)
+}
+
+leading_zeroes <- function(d) {
+  d <- d
+  d$codigo_region <- str_pad(d$codigo_region, 2, "left", "0")
+  d$codigo_provincia <- str_pad(d$codigo_provincia, 3, "left", "0")
+  d$codigo_comuna <- str_pad(d$codigo_comuna, 5, "left", "0")
+  return(d)
 }

@@ -18,4 +18,4 @@ This package shall probably never be on CRAN. Chilemaps features more than 50MB 
 
 ## Usage
 
-See pacha.hk/chilemaps for examples. I've included a quite complete vignette where I explain how to use chilemaps with ggplot2 and other packages such as rmapshaper.
+See https://pacha.hk/chilemaps for examples. I've included a quite complete vignette where I explain how to use chilemaps with ggplot2 and other packages such as rmapshaper.

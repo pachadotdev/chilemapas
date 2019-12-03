@@ -1,31 +1,23 @@
-Package: chilemaps
+Package: chilemapas
 Type: Package
-Title: Maps of the Administrative Divisions of Chile
+Title: Mapas de las Divisiones Administrativas de Chile
 Version: 0.1
 Authors@R: c(
     person("Mauricio", "Vargas", role = c("aut", "cre"),
     email = "mvargas@dcc.uchile.cl"),
     person("Roberto", "Salas", role = "ctb", email = "rosalas@uc.cl"),
     person("Joshua", "Kunst", role = "ctb", email = "jbkunst@gmail.com"),
-    person(family = "Sistema Nacional de Informacion Municipal (SINIM)",
-    role = "cph"),
-    person(family = "Subsecretaria de Desarrollo Regional (SUBDERE)",
-    role = "cph"),
-    person(family = "Ministerio del Interior", role = "cph"),
     person(family = "Instituto Nacional de Estadisticas (INE)",
     role = "cph"),
-    person(family = "Infraestructura de Datos Geoespaciales Chile (IDE Chile)",
+    person(family = "Subsecretaria de Desarrollo Regional (SUBDERE)",
     role = "cph")
     )
-Description: Maps and datasets of the different administrative divisions of 
-  Chile (excluding Antartic territories).
-  The data within this package comes as \code{data.frame} and 
-  \code{SpatialPolygonsDataFrame}.
-  All the maps contained within this package are released by the chilean
-  government under DFL-83 (year 1979), clause that means that these maps are just
-  referential. The reason behind the release clause is that these maps are
-  simplified topologies for fast map rendering and lightweight files.
-  Don't (really, don't) use these maps if you require geodesic precision.
+Description: Mapas terrestres con topologias simplificadas. Estos mapas no 
+  tienen precision geodesica, por lo que aplica DFL-83 de 1979 de la Republica
+  de Chile y se consideran referenciales sin validez legal.
+  No se incluyen los territorios antarticos y bajo ningun evento estos mapas
+  significan que exista una cesion u ocupacion de territorios soberanos en
+  contra del Derecho Internacional por parte de Chile.
 License: CC0
 Encoding: UTF-8
 LazyData: true
