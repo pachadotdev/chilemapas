@@ -9,11 +9,11 @@ Authors@R: c(
     person("Joshua", "Kunst", role = "ctb"),
     person("Juan", "Correa", role = "dtc"),
     person(family = "Instituto Nacional de Estadisticas (INE)",
-    role = "cph"),
+    role = "dtc"),
     person(family = "Subsecretaria de Desarrollo Regional (SUBDERE)",
-    role = "cph"),
+    role = "dtc"),
     person(family = "Biblioteca del Congreso Nacional de Chile (BCN)",
-    role = "cph")
+    role = "dtc")
     )
 Description: Mapas terrestres con topologias simplificadas. Estos mapas no 
   tienen precision geodesica, por lo que aplica DFL-83 de 1979 de la Republica
