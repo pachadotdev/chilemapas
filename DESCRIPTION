@@ -4,17 +4,24 @@ Title: Mapas de las Divisiones Politicas y Administrativas de Chile
 Version: 0.1
 Authors@R: c(
     person("Mauricio", "Vargas", role = c("aut", "cre"),
-    email = "mvargas@dcc.uchile.cl"),
+      email = "mvargas@dcc.uchile.cl"),
     person("Roberto", "Salas", role = "ctb"),
     person("Joshua", "Kunst", role = "ctb"),
     person("Juan", "Correa", role = "dtc"),
+    person(given = "Ricardo",
+      family = "Aravena",
+      role = c("ths")),
+    person(family = "Pontificia Universidad Catolica de Chile",
+      role = "cph"),
     person(family = "Instituto Nacional de Estadisticas (INE)",
-    role = "dtc"),
+      role = "dtc"),
     person(family = "Subsecretaria de Desarrollo Regional (SUBDERE)",
-    role = "dtc"),
+      role = "dtc"),
     person(family = "Biblioteca del Congreso Nacional de Chile (BCN)",
-    role = "dtc")
+      role = "dtc")
     )
+URL: https://pacha.hk/chilemapas/
+BugReports: https://github.com/pachamaltese/chilemapas/issues
 Description: Mapas terrestres con topologias simplificadas. Estos mapas no 
   tienen precision geodesica, por lo que aplica DFL-83 de 1979 de la Republica
   de Chile y se consideran referenciales sin validez legal.
