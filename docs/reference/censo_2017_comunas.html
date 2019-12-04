@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Map of Chile at commune level (new regions) — communes_map • chilemaps</title>
+<title>Cifras de poblacion oficiales por comuna — censo_2017_comunas • chilemapas</title>
 
 
 <!-- jquery -->
@@ -35,10 +35,8 @@
 
 
 
-<meta property="og:title" content="Map of Chile at commune level (new regions) — communes_map" />
-<meta property="og:description" content="Contains all the communes in the nation's territory indicating the
-administrative division (province and region) where they belong. This dataset
-considers 16 regions." />
+<meta property="og:title" content="Cifras de poblacion oficiales por comuna — censo_2017_comunas" />
+<meta property="og:description" content="Contiene los registros de poblacion desagregados por comuna, edad y sexo binario." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -70,7 +68,7 @@ considers 16 regions." />
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">chilemaps</a>
+        <a class="navbar-link" href="../index.html">chilemapas</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1</span>
       </span>
     </div>
@@ -94,7 +92,7 @@ considers 16 regions." />
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/basic-usage.html">How to use this package</a>
+      <a href="../articles/basic-usage.html">Uso basico del paquete chilemapas</a>
     </li>
   </ul>
 </li>
@@ -114,38 +112,31 @@ considers 16 regions." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Map of Chile at commune level (new regions)</h1>
+    <h1>Cifras de poblacion oficiales por comuna</h1>
     
-    <div class="hidden name"><code>communes_map.Rd</code></div>
+    <div class="hidden name"><code>censo_2017_comunas.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Contains all the communes in the nation's territory indicating the
-administrative division (province and region) where they belong. This dataset
-considers 16 regions.</p>
+    <p>Contiene los registros de poblacion desagregados por comuna, edad y sexo binario.</p>
     </div>
 
-    <pre class="usage"><span class='no'>communes_map</span></pre>
+    <pre class="usage"><span class='no'>censo_2017_comunas</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>List of 16</p>
-<p>&gt; str(communes_map[[1]])
-Classes ‘sf’ and 'data.frame':	7 obs. of  9 variables:
- $ region_id    : chr  "01" "01" "01" "01" ...
- $ province_id  : chr  "011" "014" "011" "014" ...
- $ commune_id   : chr  "01107" "01404" "01101" "01401" ...
- $ geometry     :sfc_POLYGON of length 7; first list element: List of 1
-  ..$ : num [1:30, 1:2] -70.1 -70.1 -70.1 -70.1 -70.1 ...
-  ..- attr(*, "class")= chr  "XY" "POLYGON" "sfg"
- - attr(*, "sf_column")= chr "geometry"
- - attr(*, "agr")= Factor w/ 3 levels "constant","aggregate",..: NA NA NA NA NA NA NA NA
-  ..- attr(*, "names")= chr  "region_id" "province_id" "commune_id" "region_name" ...</p>
+    <p>Un data frame con 14.532 observaciones y cuatro columnas.</p><dl class='dl-horizontal'>
+    <dt><code>codigo_comuna</code></dt><dd><p>vector de texto</p></dd>
+    <dt><code>edad</code></dt><dd><p>vector categorico</p></dd>
+    <dt><code>sexo</code></dt><dd><p>vector categorico</p></dd>
+    <dt><code>poblacion</code></dt><dd><p>vector numerico</p></dd>
+  
+</dl>
+
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>Sistema Nacional de Informacion Municipal (SINIM), Subsecretaria de Desarrollo
-Regional (SUBDERE) and Ministerio del Interior</p>
+    <p>Elaboracion propia con base en datos de Instituto Nacional de Estadisticas (INE).</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

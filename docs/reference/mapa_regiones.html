@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Map of Chile at health service level (new regions) — health_service_map • chilemaps</title>
+<title>Mapa de Chile a nivel regional — mapa_regiones • chilemapas</title>
 
 
 <!-- jquery -->
@@ -35,10 +35,9 @@
 
 
 
-<meta property="og:title" content="Map of Chile at health service level (new regions) — health_service_map" />
-<meta property="og:description" content="Contains all the health services in the nation's territory indicating the
-administrative division (region) where they belong. This dataset
-considers 16 regions." />
+<meta property="og:title" content="Mapa de Chile a nivel regional — mapa_regiones" />
+<meta property="og:description" content="Este mapa es calculado a partir
+del mapa comunal para no recargar el volumen de datos del paquete." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -70,7 +69,7 @@ considers 16 regions." />
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">chilemaps</a>
+        <a class="navbar-link" href="../index.html">chilemapas</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1</span>
       </span>
     </div>
@@ -94,7 +93,7 @@ considers 16 regions." />
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/basic-usage.html">How to use this package</a>
+      <a href="../articles/basic-usage.html">Uso basico del paquete chilemapas</a>
     </li>
   </ul>
 </li>
@@ -114,44 +113,41 @@ considers 16 regions." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Map of Chile at health service level (new regions)</h1>
+    <h1>Mapa de Chile a nivel regional</h1>
     
-    <div class="hidden name"><code>health_service_map.Rd</code></div>
+    <div class="hidden name"><code>mapa_regiones.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Contains all the health services in the nation's territory indicating the
-administrative division (region) where they belong. This dataset
-considers 16 regions.</p>
+    <p>Este mapa es calculado a partir
+del mapa comunal para no recargar el volumen de datos del paquete.</p>
     </div>
 
-    <pre class="usage"><span class='no'>health_service_map</span></pre>
+    <pre class="usage"><span class='fu'>mapa_regiones</span>(<span class='kw'>mapa</span> <span class='kw'>=</span> <span class='kw pkg'>chilemapas</span><span class='kw ns'>::</span><span class='no'><a href='https://rdrr.io/pkg/chilemapas/man/mapa_comunas.html'>mapa_comunas</a></span>)</pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>mapa</th>
+      <td><p>mapa a agregar, por defecto es todo el mapa nacional</p></td>
+    </tr>
+    </table>
 
-    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>List of 16</p>
-<p>&gt; str(health_service_map[[1]])
-Classes ‘sf’ and 'data.frame':	1 obs. of  3 variables:
- $ health_service_id: chr "02"
- $ region_id        : chr "01"
- $ geometry         :sfc_POLYGON of length 1; first list element: List of 1
-  ..$ : num [1:1653, 1:2] -70.1 -70.1 -70.1 -70.1 -70.1 ...
-  ..- attr(*, "class")= chr  "XY" "POLYGON" "sfg"
- - attr(*, "sf_column")= chr "geometry"
- - attr(*, "agr")= Factor w/ 3 levels "constant","aggregate",..: NA NA
-  ..- attr(*, "names")= chr  "health_service_id" "region_id"</p>
-    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
+    <p>Un objeto de clase sf y data.frame.</p>
 
-    <p>Subsecretaria de Desarrollo Regional (SUBDERE) and
-Infraestructura de Datos Geoespaciales Chile (IDE Chile)</p>
-
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'># mapa_regiones()
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#format">Format</a></li>
-      <li><a href="#source">Source</a></li>
+      <li><a href="#arguments">Arguments</a></li>
+      <li><a href="#value">Value</a></li>
+      <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>

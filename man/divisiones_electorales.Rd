@@ -12,14 +12,16 @@ segun la legislacion vigente.
 }
 \usage{divisiones_electorales}
 \format{
-Classes ‘tbl_df’, ‘tbl’ and 'data.frame':	346 obs. of  5 variables:
- $ codigo_comuna            : chr  "15101" "15102" "15202" "15201" ...
- $ codigo_circunscripcion   : chr  "01" "01" "01" "01" ...
- $ senadores_circunscripcion: int  2 2 2 2 2 2 2 2 2 2 ...
- $ codigo_distrito          : chr  "01" "01" "01" "01" ...
- $ diputados_distrito       : int  3 3 3 3 3 3 3 3 3 3 ...
+Un data frame con 346 observaciones y cinco columnas.
+  \describe{
+    \item{\code{codigo_comuna}}{vector de texto}
+    \item{\code{codigo_circunscripcion}}{vector de texto}
+    \item{\code{senadores_circunscripcion}}{vector numerico}
+    \item{\code{codigo_distrito}}{vector de texto}
+    \item{\code{diputados_distrito}}{vector numerico}
+  }
 }
 \source{
-Biblioteca del Congreso Nacional de Chile (BCN)
+Elaboracion propia con base en datos de Biblioteca del Congreso Nacional de Chile (BCN).
 }
 \keyword{datasets}

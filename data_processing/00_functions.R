@@ -1,5 +1,5 @@
 if (!require("pacman")) { install.packages("pacman") }
-pacman::p_load(sf, rmapshaper, geojsonio, dplyr, tidyr, purrr, stringr, data.table, readxl, janitor, xml2, rvest)
+pacman::p_load(sf, rmapshaper, geojsonio, dplyr, tidyr, purrr, stringr, data.table, readxl, janitor, xml2, rvest, forcats)
 
 download_file <- function(x,y) {
   if (!file.exists(y)) {

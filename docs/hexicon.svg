@@ -14,7 +14,7 @@
    width="166.03305"
    height="192.11954"
    id="svg2811"
-   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="hexicon.svg"
    inkscape:export-filename="/home/pacha/GitHub/gravity/docs/apple.png"
    inkscape:export-xdpi="90"
@@ -40,20 +40,20 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="681"
-     inkscape:window-height="696"
+     inkscape:window-width="1600"
+     inkscape:window-height="832"
      id="namedview15"
      showgrid="false"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:zoom="1.8101934"
-     inkscape:cx="83.398574"
-     inkscape:cy="142.76085"
-     inkscape:window-x="-7"
-     inkscape:window-y="0"
-     inkscape:window-maximized="0"
+     inkscape:zoom="2.5600001"
+     inkscape:cx="70.364857"
+     inkscape:cy="138.74536"
+     inkscape:window-x="0"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
      inkscape:current-layer="g4347"
      showguides="true"
      inkscape:guide-bbox="true"
@@ -2605,7 +2605,7 @@
              style="stroke:#000000;stroke-opacity:1"
              id="layer7"
              inkscape:label="fondo borde a 3px"
-             transform="matrix(0.38207022,0,0,0.38207022,-4090.934,3086.2708)">
+             transform="matrix(0.38207022,0,0,0.38207022,-4090.934,3084.974)">
             <g
                id="g4606"
                transform="translate(456.42987,271.96111)">
@@ -2823,47 +2823,17 @@
                  style="display:inline;fill:#333333;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
             </g>
           </g>
-          <g
-             aria-label="CHILEMAPS"
-             style="font-style:normal;font-weight:normal;font-size:31.42565536px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#eac102;fill-opacity:1;stroke:none;stroke-width:1.17846203;stroke-opacity:1"
-             id="text2487">
-            <path
-               d="m -3554.7901,3180.2633 c -4.3996,0 -7.9507,3.5196 -7.9507,11.1561 0,7.605 3.3626,11.2189 7.9193,11.2189 2.514,0 4.3053,-1.1627 5.4052,-2.3883 l -1.5084,-1.697 c -0.9742,0.8171 -2.0741,1.6656 -3.7711,1.6656 -2.8597,0 -4.9967,-2.2627 -4.9967,-8.7992 0,-6.8194 2.2312,-8.8306 4.9967,-8.8306 1.3199,0 2.3883,0.5028 3.5825,1.5398 l 1.5085,-1.7598 c -1.5399,-1.3513 -2.9855,-2.1055 -5.1853,-2.1055 z"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Sans Condensed';-inkscape-font-specification:'Fira Sans Condensed, ';fill:#eac102;fill-opacity:1;stroke-width:1.17846203"
-               id="path4608" />
-            <path
-               d="m -3536.0186,3202.2612 h 2.8597 v -21.6522 h -2.8597 v 9.1134 h -7.4794 v -9.1134 h -2.8597 v 21.6522 h 2.8597 v -10.1819 h 7.4794 z"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Sans Condensed';-inkscape-font-specification:'Fira Sans Condensed, ';fill:#eac102;fill-opacity:1;stroke-width:1.17846203"
-               id="path4610" />
-            <path
-               d="m -3525.1459,3180.609 h -2.8597 v 21.6522 h 2.8597 z"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Sans Condensed';-inkscape-font-specification:'Fira Sans Condensed, ';fill:#eac102;fill-opacity:1;stroke-width:1.17846203"
-               id="path4612" />
-            <path
-               d="m -3517.1667,3180.609 h -2.8597 v 21.6522 h 10.119 l 0.3143,-2.514 h -7.5736 z"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Sans Condensed';-inkscape-font-specification:'Fira Sans Condensed, ';fill:#eac102;fill-opacity:1;stroke-width:1.17846203"
-               id="path4614" />
-            <path
-               d="m -3496.3384,3180.609 h -10.3076 v 21.6522 h 10.4648 v -2.294 h -7.605 v -7.5736 h 6.1908 v -2.2941 h -6.1908 v -7.1965 h 7.1336 z"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Sans Condensed';-inkscape-font-specification:'Fira Sans Condensed, ';fill:#eac102;fill-opacity:1;stroke-width:1.17846203"
-               id="path4616" />
-            <path
-               d="m -3476.6335,3180.609 h -3.8025 l -3.5825,15.8699 -3.7711,-15.8699 h -3.7396 l -1.5399,21.6522 h 2.7026 l 0.5657,-9.6476 c 0.1885,-3.174 0.3142,-6.5994 0.2828,-9.1135 l 4.1168,16.3099 h 2.6711 l 3.9282,-16.2785 c -0.031,1.8227 0.1572,5.4995 0.3772,8.8935 l 0.6285,9.8362 h 2.7026 z"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Sans Condensed';-inkscape-font-specification:'Fira Sans Condensed, ';fill:#eac102;fill-opacity:1;stroke-width:1.17846203"
-               id="path4618" />
-            <path
-               d="m -3460.6206,3202.2612 h 2.954 l -5.9081,-21.6522 h -3.5825 l -5.908,21.6522 h 2.8283 l 1.3827,-5.4995 h 6.8822 z m -7.6679,-7.7935 2.8597,-11.4704 2.8912,11.4704 z"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Sans Condensed';-inkscape-font-specification:'Fira Sans Condensed, ';fill:#eac102;fill-opacity:1;stroke-width:1.17846203"
-               id="path4620" />
-            <path
-               d="m -3450.3489,3180.609 h -4.4938 v 21.6522 h 2.8597 v -8.0135 h 1.697 c 4.7453,0 7.825,-2.0741 7.825,-6.9451 0,-4.431 -2.7655,-6.6936 -7.8879,-6.6936 z m 0.032,11.376 h -1.6656 v -9.1134 h 1.697 c 3.174,0 4.8395,1.257 4.8395,4.4624 0,3.6454 -1.7284,4.651 -4.8709,4.651 z"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Sans Condensed';-inkscape-font-specification:'Fira Sans Condensed, ';fill:#eac102;fill-opacity:1;stroke-width:1.17846203"
-               id="path4622" />
-            <path
-               d="m -3434.5973,3180.2633 c -3.5825,0 -6.0965,2.4512 -6.0965,5.5937 0,3.0798 1.7598,4.871 5.5309,6.2223 3.1111,1.0999 3.9282,2.1998 3.9282,4.2425 0,2.4826 -1.5713,3.9596 -3.8339,3.9596 -2.0113,0 -3.4569,-0.8485 -4.8396,-2.1055 l -1.5398,1.6656 c 1.6027,1.7284 3.6453,2.7968 6.4108,2.7968 4.211,0 6.7879,-2.8911 6.7879,-6.3794 0,-3.8653 -2.3255,-5.4052 -5.4995,-6.5365 -3.2682,-1.1628 -4.0224,-2.1998 -4.0224,-3.9911 0,-1.9169 1.3198,-3.1425 3.2054,-3.1425 1.5713,0 2.8597,0.5656 4.211,1.8227 l 1.5399,-1.6656 c -1.5713,-1.6027 -3.2997,-2.4826 -5.7824,-2.4826 z"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Sans Condensed';-inkscape-font-specification:'Fira Sans Condensed, ';fill:#eac102;fill-opacity:1;stroke-width:1.17846203"
-               id="path4624" />
-          </g>
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-weight:normal;font-size:27.79880142px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#eac102;fill-opacity:1;stroke:none;stroke-width:0.69497007"
+             x="-3565.2661"
+             y="3197.1567"
+             id="text627"><tspan
+               sodipodi:role="line"
+               id="tspan625"
+               x="-3565.2661"
+               y="3197.1567"
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Sans Condensed';-inkscape-font-specification:'Fira Sans Condensed, ';fill:#eac102;fill-opacity:1;stroke-width:0.69497007">CHILEMAPAS</tspan></text>
         </g>
       </g>
     </g>

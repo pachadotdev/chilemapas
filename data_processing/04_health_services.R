@@ -163,9 +163,19 @@ if (!file.exists(health_service_codes_file)) {
       nombre_servicio_salud = ifelse(codigo_region == "11", "Aysen", nombre_servicio_salud), # 11th
       nombre_servicio_salud = ifelse(codigo_region == "12", "Magallanes", nombre_servicio_salud), # 12th
     ) %>%
+    drop_na() %>%
     select(-codigo_region)
 
-  save(health_service_codes, file = health_service_codes_file, compress = "xz")
+  divisiones_salud <- bind_rows(health_service_codes_1, health_service_codes_2) %>%
+    arrange(codigo_comuna)
+
+  save(divisiones_salud, file = health_service_codes_file, compress = "xz")
 } else{
   load(health_service_codes_file)
+}
+
+health_service_file_csv <- sprintf("%s/divisiones_salud.csv", csv_dir)
+
+if (!file.exists(health_service_file_csv)) {
+  fwrite(divisiones_salud, file = health_service_file_csv)
 }

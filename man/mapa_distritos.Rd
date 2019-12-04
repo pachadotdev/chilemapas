@@ -4,14 +4,17 @@
 \alias{mapa_distritos}
 \title{Mapa de Chile a nivel de distritos}
 \usage{
-mapa_distritos()
+mapa_distritos(mapa = chilemapas::mapa_comunas)
+}
+\arguments{
+\item{mapa}{mapa a agregar, por defecto es todo el mapa nacional}
 }
 \value{
-un objeto de clase sf y data.frame, este mapa es calculado a partir
-del mapa comunal para no recargar el volumen de datos del paquete
+Un objeto de clase sf y data.frame.
 }
 \description{
-Mapa de Chile a nivel de distritos
+Este mapa es calculado a partir
+del mapa comunal para no recargar el volumen de datos del paquete.
 }
 \examples{
 # mapa_distritos()

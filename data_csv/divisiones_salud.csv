@@ -1,0 +1,347 @@
+codigo_comuna,codigo_servicio_salud,nombre_servicio_salud
+01101,02,Iquique
+01107,02,Iquique
+01401,02,Iquique
+01402,02,Iquique
+01403,02,Iquique
+01404,02,Iquique
+01405,02,Iquique
+02101,03,Antofagasta
+02102,03,Antofagasta
+02103,03,Antofagasta
+02104,03,Antofagasta
+02201,03,Antofagasta
+02202,03,Antofagasta
+02203,03,Antofagasta
+02301,03,Antofagasta
+02302,03,Antofagasta
+03101,04,Atacama
+03102,04,Atacama
+03103,04,Atacama
+03201,04,Atacama
+03202,04,Atacama
+03301,04,Atacama
+03302,04,Atacama
+03303,04,Atacama
+03304,04,Atacama
+04101,05,Coquimbo
+04102,05,Coquimbo
+04103,05,Coquimbo
+04104,05,Coquimbo
+04105,05,Coquimbo
+04106,05,Coquimbo
+04201,05,Coquimbo
+04202,05,Coquimbo
+04203,05,Coquimbo
+04204,05,Coquimbo
+04301,05,Coquimbo
+04302,05,Coquimbo
+04303,05,Coquimbo
+04304,05,Coquimbo
+04305,05,Coquimbo
+05101,06,Valparaiso San Antonio
+05102,06,Valparaiso San Antonio
+05103,07,Vina del Mar Quillota
+05104,06,Valparaiso San Antonio
+05105,07,Vina del Mar Quillota
+05107,07,Vina del Mar Quillota
+05109,07,Vina del Mar Quillota
+05201,06,Valparaiso San Antonio
+05301,08,Aconcagua
+05302,08,Aconcagua
+05303,08,Aconcagua
+05304,08,Aconcagua
+05401,07,Vina del Mar Quillota
+05402,07,Vina del Mar Quillota
+05403,07,Vina del Mar Quillota
+05404,07,Vina del Mar Quillota
+05405,07,Vina del Mar Quillota
+05501,07,Vina del Mar Quillota
+05502,07,Vina del Mar Quillota
+05503,07,Vina del Mar Quillota
+05504,07,Vina del Mar Quillota
+05506,07,Vina del Mar Quillota
+05601,06,Valparaiso San Antonio
+05602,06,Valparaiso San Antonio
+05603,06,Valparaiso San Antonio
+05604,06,Valparaiso San Antonio
+05605,06,Valparaiso San Antonio
+05606,06,Valparaiso San Antonio
+05701,08,Aconcagua
+05702,08,Aconcagua
+05703,08,Aconcagua
+05704,08,Aconcagua
+05705,08,Aconcagua
+05706,08,Aconcagua
+05801,07,Vina del Mar Quillota
+05802,07,Vina del Mar Quillota
+05803,07,Vina del Mar Quillota
+05804,07,Vina del Mar Quillota
+06101,15,OHiggins
+06102,15,OHiggins
+06103,15,OHiggins
+06104,15,OHiggins
+06105,15,OHiggins
+06106,15,OHiggins
+06107,15,OHiggins
+06108,15,OHiggins
+06109,15,OHiggins
+06110,15,OHiggins
+06111,15,OHiggins
+06112,15,OHiggins
+06113,15,OHiggins
+06114,15,OHiggins
+06115,15,OHiggins
+06116,15,OHiggins
+06117,15,OHiggins
+06201,15,OHiggins
+06202,15,OHiggins
+06203,15,OHiggins
+06204,15,OHiggins
+06205,15,OHiggins
+06206,15,OHiggins
+06301,15,OHiggins
+06302,15,OHiggins
+06303,15,OHiggins
+06304,15,OHiggins
+06305,15,OHiggins
+06306,15,OHiggins
+06307,15,OHiggins
+06308,15,OHiggins
+06309,15,OHiggins
+06310,15,OHiggins
+07101,16,del Maule
+07102,16,del Maule
+07103,16,del Maule
+07104,16,del Maule
+07105,16,del Maule
+07106,16,del Maule
+07107,16,del Maule
+07108,16,del Maule
+07109,16,del Maule
+07110,16,del Maule
+07201,16,del Maule
+07202,16,del Maule
+07203,16,del Maule
+07301,16,del Maule
+07302,16,del Maule
+07303,16,del Maule
+07304,16,del Maule
+07305,16,del Maule
+07306,16,del Maule
+07307,16,del Maule
+07308,16,del Maule
+07309,16,del Maule
+07401,16,del Maule
+07402,16,del Maule
+07403,16,del Maule
+07404,16,del Maule
+07405,16,del Maule
+07406,16,del Maule
+07407,16,del Maule
+07408,16,del Maule
+08101,18,Concepcion
+08102,18,Concepcion
+08103,18,Concepcion
+08104,18,Concepcion
+08105,18,Concepcion
+08106,18,Concepcion
+08107,19,Talcahuano
+08108,18,Concepcion
+08109,18,Concepcion
+08110,19,Talcahuano
+08111,19,Talcahuano
+08112,19,Talcahuano
+08201,28,Arauco
+08202,28,Arauco
+08203,28,Arauco
+08204,28,Arauco
+08205,28,Arauco
+08206,28,Arauco
+08207,28,Arauco
+08301,20,Biobio
+08302,20,Biobio
+08303,20,Biobio
+08304,20,Biobio
+08305,20,Biobio
+08306,20,Biobio
+08307,20,Biobio
+08308,20,Biobio
+08309,20,Biobio
+08310,20,Biobio
+08311,20,Biobio
+08312,20,Biobio
+08313,20,Biobio
+08314,20,Biobio
+09101,21,Araucania Sur
+09102,21,Araucania Sur
+09103,21,Araucania Sur
+09104,21,Araucania Sur
+09105,21,Araucania Sur
+09106,21,Araucania Sur
+09107,21,Araucania Sur
+09108,21,Araucania Sur
+09109,21,Araucania Sur
+09110,21,Araucania Sur
+09111,21,Araucania Sur
+09112,21,Araucania Sur
+09113,21,Araucania Sur
+09114,21,Araucania Sur
+09115,21,Araucania Sur
+09116,21,Araucania Sur
+09117,21,Araucania Sur
+09118,21,Araucania Sur
+09119,21,Araucania Sur
+09120,21,Araucania Sur
+09121,21,Araucania Sur
+09201,29,Araucania Norte
+09202,29,Araucania Norte
+09203,29,Araucania Norte
+09204,29,Araucania Norte
+09205,29,Araucania Norte
+09206,29,Araucania Norte
+09207,29,Araucania Norte
+09208,29,Araucania Norte
+09209,29,Araucania Norte
+09210,29,Araucania Norte
+09211,29,Araucania Norte
+10101,24,del Reloncavi
+10102,24,del Reloncavi
+10103,24,del Reloncavi
+10104,24,del Reloncavi
+10105,24,del Reloncavi
+10106,24,del Reloncavi
+10107,24,del Reloncavi
+10108,24,del Reloncavi
+10109,24,del Reloncavi
+10201,33,Chiloe
+10202,33,Chiloe
+10203,33,Chiloe
+10204,33,Chiloe
+10205,33,Chiloe
+10206,33,Chiloe
+10207,33,Chiloe
+10208,33,Chiloe
+10209,33,Chiloe
+10210,33,Chiloe
+10301,23,Osorno
+10302,23,Osorno
+10303,23,Osorno
+10304,23,Osorno
+10305,23,Osorno
+10306,23,Osorno
+10307,23,Osorno
+10401,24,del Reloncavi
+10402,24,del Reloncavi
+10403,24,del Reloncavi
+10404,24,del Reloncavi
+11101,25,Aysen
+11102,25,Aysen
+11201,25,Aysen
+11202,25,Aysen
+11203,25,Aysen
+11301,25,Aysen
+11302,25,Aysen
+11303,25,Aysen
+11401,25,Aysen
+11402,25,Aysen
+12101,26,Magallanes
+12102,26,Magallanes
+12103,26,Magallanes
+12104,26,Magallanes
+12201,26,Magallanes
+12202,26,Magallanes
+12301,26,Magallanes
+12302,26,Magallanes
+12303,26,Magallanes
+12401,26,Magallanes
+12402,26,Magallanes
+13101,11,Metropolitano Central
+13102,11,Metropolitano Central
+13103,10,Metropolitano Occidente
+13104,09,Metropolitano Norte
+13105,13,Metropolitano Sur
+13106,11,Metropolitano Central
+13107,09,Metropolitano Norte
+13108,09,Metropolitano Norte
+13109,13,Metropolitano Sur
+13110,14,Metropolitano Suroriente
+13111,14,Metropolitano Suroriente
+13112,14,Metropolitano Suroriente
+13113,12,Metropolitano Oriente
+13114,12,Metropolitano Oriente
+13115,12,Metropolitano Oriente
+13116,13,Metropolitano Sur
+13117,10,Metropolitano Occidente
+13118,12,Metropolitano Oriente
+13119,11,Metropolitano Central
+13120,12,Metropolitano Oriente
+13121,13,Metropolitano Sur
+13122,12,Metropolitano Oriente
+13123,12,Metropolitano Oriente
+13124,10,Metropolitano Occidente
+13125,09,Metropolitano Norte
+13126,10,Metropolitano Occidente
+13127,09,Metropolitano Norte
+13128,10,Metropolitano Occidente
+13129,13,Metropolitano Sur
+13130,13,Metropolitano Sur
+13131,14,Metropolitano Suroriente
+13132,12,Metropolitano Oriente
+13201,14,Metropolitano Suroriente
+13202,14,Metropolitano Suroriente
+13203,14,Metropolitano Suroriente
+13301,09,Metropolitano Norte
+13302,09,Metropolitano Norte
+13303,09,Metropolitano Norte
+13401,13,Metropolitano Sur
+13402,13,Metropolitano Sur
+13403,13,Metropolitano Sur
+13404,13,Metropolitano Sur
+13501,10,Metropolitano Occidente
+13502,10,Metropolitano Occidente
+13503,10,Metropolitano Occidente
+13504,10,Metropolitano Occidente
+13505,10,Metropolitano Occidente
+13601,10,Metropolitano Occidente
+13602,10,Metropolitano Occidente
+13603,10,Metropolitano Occidente
+13604,10,Metropolitano Occidente
+13605,10,Metropolitano Occidente
+14101,22,Valdivia
+14102,22,Valdivia
+14103,22,Valdivia
+14104,22,Valdivia
+14105,22,Valdivia
+14106,22,Valdivia
+14107,22,Valdivia
+14108,22,Valdivia
+14201,22,Valdivia
+14202,22,Valdivia
+14203,22,Valdivia
+14204,22,Valdivia
+15101,01,Arica
+15102,01,Arica
+15201,01,Arica
+15202,01,Arica
+16101,17,Nuble
+16102,17,Nuble
+16103,17,Nuble
+16104,17,Nuble
+16105,17,Nuble
+16106,17,Nuble
+16107,17,Nuble
+16108,17,Nuble
+16109,17,Nuble
+16201,17,Nuble
+16202,17,Nuble
+16203,17,Nuble
+16204,17,Nuble
+16205,17,Nuble
+16206,17,Nuble
+16207,17,Nuble
+16301,17,Nuble
+16302,17,Nuble
+16303,17,Nuble
+16304,17,Nuble
+16305,17,Nuble

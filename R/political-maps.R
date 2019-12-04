@@ -1,16 +1,18 @@
 #' Mapa de Chile a nivel de circunscripciones
+#' @description Este mapa es calculado a partir
+#' del mapa comunal para no recargar el volumen de datos del paquete.
+#' @param mapa mapa a agregar, por defecto es todo el mapa nacional
 #' @importFrom rmapshaper ms_dissolve
 #' @importFrom dplyr left_join select distinct mutate rename arrange
 #' @importFrom magrittr %>%
 #' @importFrom stringr str_sub
 #' @importFrom rlang sym
-#' @return un objeto de clase sf y data.frame, este mapa es calculado a partir
-#' del mapa comunal para no recargar el volumen de datos del paquete
+#' @return Un objeto de clase sf y data.frame.
 #' @examples
 #' # mapa_circunscripciones()
 #' @export
-mapa_circunscripciones <- function() {
-  chilemapas::mapa_comunas %>%
+mapa_circunscripciones <- function(mapa = chilemapas::mapa_comunas) {
+  mapa %>%
     left_join(
       chilemapas::divisiones_electorales %>% select(!!sym("codigo_comuna"), !!sym("codigo_circunscripcion"))
     ) %>%
@@ -26,18 +28,20 @@ mapa_circunscripciones <- function() {
 }
 
 #' Mapa de Chile a nivel de distritos
+#' @description Este mapa es calculado a partir
+#' del mapa comunal para no recargar el volumen de datos del paquete.
+#' @param mapa mapa a agregar, por defecto es todo el mapa nacional
 #' @importFrom rmapshaper ms_dissolve
 #' @importFrom dplyr left_join select distinct mutate rename arrange
 #' @importFrom magrittr %>%
 #' @importFrom stringr str_sub
 #' @importFrom rlang sym
-#' @return un objeto de clase sf y data.frame, este mapa es calculado a partir
-#' del mapa comunal para no recargar el volumen de datos del paquete
+#' @return Un objeto de clase sf y data.frame.
 #' @examples
 #' # mapa_distritos()
 #' @export
-mapa_distritos <- function() {
-  chilemapas::mapa_comunas %>%
+mapa_distritos <- function(mapa = chilemapas::mapa_comunas) {
+  mapa %>%
     left_join(
       chilemapas::divisiones_electorales %>% select(!!sym("codigo_comuna"), !!sym("codigo_distrito"))
     ) %>%

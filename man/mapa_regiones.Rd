@@ -4,14 +4,17 @@
 \alias{mapa_regiones}
 \title{Mapa de Chile a nivel regional}
 \usage{
-mapa_regiones()
+mapa_regiones(mapa = chilemapas::mapa_comunas)
+}
+\arguments{
+\item{mapa}{mapa a agregar, por defecto es todo el mapa nacional}
 }
 \value{
-un objeto de clase sf y data.frame, este mapa es calculado a partir
-del mapa comunal para no recargar el volumen de datos del paquete
+Un objeto de clase sf y data.frame.
 }
 \description{
-Mapa de Chile a nivel regional
+Este mapa es calculado a partir
+del mapa comunal para no recargar el volumen de datos del paquete.
 }
 \examples{
 # mapa_regiones()

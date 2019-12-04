@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Map of Chile at health service level (new regions) — electoral_circumscription_map • chilemaps</title>
+<title>Mapa de Chile a nivel comunal — mapa_comunas • chilemapas</title>
 
 
 <!-- jquery -->
@@ -35,10 +35,9 @@
 
 
 
-<meta property="og:title" content="Map of Chile at health service level (new regions) — electoral_circumscription_map" />
-<meta property="og:description" content="Contains all the electoral circumscriptions in the nation's territory indicating the
-administrative division (region) where they belong. This dataset
-considers 16 regions." />
+<meta property="og:title" content="Mapa de Chile a nivel comunal — mapa_comunas" />
+<meta property="og:description" content="Contiene todas las comunas del territorio nacional indicando las divisiones
+administrativas (provincia y region) a las que pertenecen." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -70,7 +69,7 @@ considers 16 regions." />
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">chilemaps</a>
+        <a class="navbar-link" href="../index.html">chilemapas</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1</span>
       </span>
     </div>
@@ -94,7 +93,7 @@ considers 16 regions." />
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/basic-usage.html">How to use this package</a>
+      <a href="../articles/basic-usage.html">Uso basico del paquete chilemapas</a>
     </li>
   </ul>
 </li>
@@ -114,37 +113,32 @@ considers 16 regions." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Map of Chile at health service level (new regions)</h1>
+    <h1>Mapa de Chile a nivel comunal</h1>
     
-    <div class="hidden name"><code>electoral_circumscription_map.Rd</code></div>
+    <div class="hidden name"><code>mapa_comunas.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Contains all the electoral circumscriptions in the nation's territory indicating the
-administrative division (region) where they belong. This dataset
-considers 16 regions.</p>
+    <p>Contiene todas las comunas del territorio nacional indicando las divisiones
+administrativas (provincia y region) a las que pertenecen.</p>
     </div>
 
-    <pre class="usage"><span class='no'>electoral_circumscription_map</span></pre>
+    <pre class="usage"><span class='no'>mapa_comunas</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>List of 16</p>
-<p>&gt; str(electoral_circumscription_map[[1]])
-Classes ‘sf’ and 'data.frame':	1 obs. of  3 variables:
- $ circumscription_id: chr "02"
- $ region_id         : chr "01"
- $ geometry          :sfc_POLYGON of length 1; first list element: List of 1
-  ..$ : num [1:1653, 1:2] -70.1 -70.1 -70.1 -70.1 -70.1 ...
-  ..- attr(*, "class")= chr  "XY" "POLYGON" "sfg"
- - attr(*, "sf_column")= chr "geometry"
- - attr(*, "agr")= Factor w/ 3 levels "constant","aggregate",..: NA NA
-  ..- attr(*, "names")= chr  "circumscription_id" "region_id"</p>
+    <p>Un data frame con 346 observaciones y cuatro columnas.</p><dl class='dl-horizontal'>
+    <dt><code>codigo_comuna</code></dt><dd><p>vector de texto</p></dd>
+    <dt><code>codigo_provincia</code></dt><dd><p>vector de texto</p></dd>
+    <dt><code>codigo_region</code></dt><dd><p>vector de texto</p></dd>
+    <dt><code>geometry</code></dt><dd><p>vector de poligonos</p></dd>
+  
+</dl>
+
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>Subsecretaria de Desarrollo Regional (SUBDERE) and
-Infraestructura de Datos Geoespaciales Chile (IDE Chile)</p>
+    <p>Elaboracion propia con base en datos de Instituto Nacional de Estadisticas (INE) y Subsecretaria de Desarrollo Regional (SUBDERE).</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
