@@ -9,7 +9,7 @@
 #' @importFrom rlang sym
 #' @return Un objeto de clase sf y data.frame.
 #' @examples
-#' # mapa_circunscripciones()
+#' mapa_circunscripciones()
 #' @export
 mapa_circunscripciones <- function(mapa = chilemapas::mapa_comunas) {
   mapa %>%
@@ -38,7 +38,7 @@ mapa_circunscripciones <- function(mapa = chilemapas::mapa_comunas) {
 #' @importFrom rlang sym
 #' @return Un objeto de clase sf y data.frame.
 #' @examples
-#' # mapa_distritos()
+#' mapa_distritos()
 #' @export
 mapa_distritos <- function(mapa = chilemapas::mapa_comunas) {
   mapa %>%

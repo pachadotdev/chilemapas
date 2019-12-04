@@ -9,7 +9,7 @@
 #' @importFrom rlang sym
 #' @return Un objeto de clase sf y data.frame.
 #' @examples
-#' # mapa_provincias()
+#' mapa_provincias()
 #' @export
 mapa_provincias <- function(mapa = chilemapas::mapa_comunas) {
   ms_dissolve(mapa, field = "codigo_provincia") %>%
@@ -25,7 +25,7 @@ mapa_provincias <- function(mapa = chilemapas::mapa_comunas) {
 #' @importFrom rmapshaper ms_dissolve
 #' @return Un objeto de clase sf y data.frame.
 #' @examples
-#' # mapa_regiones()
+#' mapa_regiones()
 #' @export
 mapa_regiones <- function(mapa = chilemapas::mapa_comunas) {
   ms_dissolve(mapa, field = "codigo_region")
@@ -39,7 +39,7 @@ mapa_regiones <- function(mapa = chilemapas::mapa_comunas) {
 #' @importFrom rmapshaper ms_dissolve
 #' @return Un objeto de clase sf y data.frame.
 #' @examples
-#' # mapa_salud()
+#' mapa_salud()
 #' @export
 mapa_salud <- function(mapa = chilemapas::mapa_comunas) {
   mapa %>%

@@ -20,4 +20,7 @@ Un data frame con 14.532 observaciones y cuatro columnas.
 \source{
 Elaboracion propia con base en datos de Instituto Nacional de Estadisticas (INE).
 }
+\examples{
+censo_2017_comunas
+}
 \keyword{datasets}

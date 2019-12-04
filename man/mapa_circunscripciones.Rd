@@ -17,5 +17,5 @@ Este mapa es calculado a partir
 del mapa comunal para no recargar el volumen de datos del paquete.
 }
 \examples{
-# mapa_circunscripciones()
+mapa_circunscripciones()
 }

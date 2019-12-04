@@ -24,4 +24,7 @@ Un data frame con 346 observaciones y seis columnas.
 \source{
 Elaboracion propia con base en datos de Subsecretaria de Desarrollo Regional (SUBDERE).
 }
+\examples{
+codigos_territoriales
+}
 \keyword{datasets}

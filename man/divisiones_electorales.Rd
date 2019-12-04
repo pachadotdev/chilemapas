@@ -24,4 +24,7 @@ Un data frame con 346 observaciones y cinco columnas.
 \source{
 Elaboracion propia con base en datos de Biblioteca del Congreso Nacional de Chile (BCN).
 }
+\examples{
+divisiones_electorales
+}
 \keyword{datasets}

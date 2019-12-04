@@ -21,4 +21,7 @@ Un data frame con 346 observaciones y tres columnas.
 Elaboracion propia con base en las jurisdicciones que reporta el sitio web
 de cada servicio de salud.
 }
+\examples{
+divisiones_salud
+}
 \keyword{datasets}
