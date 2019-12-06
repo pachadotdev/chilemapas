@@ -1,7 +1,7 @@
 Package: chilemapas
 Type: Package
 Title: Mapas de las Divisiones Politicas y Administrativas de Chile
-Version: 0.1
+Version: 0.1.1
 Authors@R: c(
     person("Mauricio", "Vargas", role = c("aut", "cre"),
       email = "mvargas@dcc.uchile.cl"),
@@ -27,7 +27,9 @@ Description: Mapas terrestres con topologias simplificadas. Estos mapas no
   de Chile y se consideran referenciales sin validez legal.
   No se incluyen los territorios antarticos y bajo ningun evento estos mapas
   significan que exista una cesion u ocupacion de territorios soberanos en
-  contra del Derecho Internacional por parte de Chile.
+  contra del Derecho Internacional por parte de Chile. Esta paquete esta 
+  documentado intencionalmente en castellano asciificado para que funcione sin 
+  problema en diferentes plataformas.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

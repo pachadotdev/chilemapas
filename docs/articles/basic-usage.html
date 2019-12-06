@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">chilemapas</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
       </span>
     </div>
 
@@ -75,7 +75,7 @@
       <h1>Uso basico del paquete chilemapas</h1>
                         <h4 class="author">Mauricio Vargas S.</h4>
             
-            <h4 class="date">2019-12-04</h4>
+            <h4 class="date">2019-12-06</h4>
       
       
       <div class="hidden name"><code>basic-usage.Rmd</code></div>
@@ -140,15 +140,14 @@
 <span id="cb2-14"><a href="#cb2-14"></a><span class="st">      </span><span class="kw">distinct</span>()</span>
 <span id="cb2-15"><a href="#cb2-15"></a>  ) <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb2-16"><a href="#cb2-16"></a><span class="st">  </span><span class="kw">left_join</span>(poblacion_adulto_mayor_provincias)</span>
-<span id="cb2-17"><a href="#cb2-17"></a><span class="co">#&gt; Joining, by = "codigo_provincia"</span></span>
-<span id="cb2-18"><a href="#cb2-18"></a><span class="co">#&gt; Joining, by = "codigo_provincia"</span></span>
-<span id="cb2-19"><a href="#cb2-19"></a><span class="co">#&gt; Joining, by = "codigo_provincia"</span></span>
-<span id="cb2-20"><a href="#cb2-20"></a></span>
-<span id="cb2-21"><a href="#cb2-21"></a><span class="kw">ggplot</span>(provincias_los_rios) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb2-22"><a href="#cb2-22"></a><span class="st">  </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> pob_adulto_mayor)) <span class="op">+</span></span>
-<span id="cb2-23"><a href="#cb2-23"></a><span class="st">  </span><span class="kw">geom_sf_label</span>(<span class="kw">aes</span>(<span class="dt">label =</span> nombre_provincia)) <span class="op">+</span></span>
-<span id="cb2-24"><a href="#cb2-24"></a><span class="st">  </span><span class="kw">scale_fill_gradientn</span>(<span class="dt">colours =</span> <span class="kw"><a href="https://rdrr.io/r/base/rev.html">rev</a></span>(paleta), <span class="dt">name =</span> <span class="st">"Poblacion</span><span class="ch">\n</span><span class="st">adulto mayor"</span>) <span class="op">+</span></span>
-<span id="cb2-25"><a href="#cb2-25"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">"Poblacion de 65 anios y mas en la Region de los Rios"</span>)</span></code></pre></div>
+<span id="cb2-17"><a href="#cb2-17"></a><span class="co">#&gt; Joining, by = "codigo_provincia"Joining, by = "codigo_provincia"Joining, by</span></span>
+<span id="cb2-18"><a href="#cb2-18"></a><span class="co">#&gt; = "codigo_provincia"</span></span>
+<span id="cb2-19"><a href="#cb2-19"></a></span>
+<span id="cb2-20"><a href="#cb2-20"></a><span class="kw">ggplot</span>(provincias_los_rios) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb2-21"><a href="#cb2-21"></a><span class="st">  </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> pob_adulto_mayor)) <span class="op">+</span></span>
+<span id="cb2-22"><a href="#cb2-22"></a><span class="st">  </span><span class="kw">geom_sf_label</span>(<span class="kw">aes</span>(<span class="dt">label =</span> nombre_provincia)) <span class="op">+</span></span>
+<span id="cb2-23"><a href="#cb2-23"></a><span class="st">  </span><span class="kw">scale_fill_gradientn</span>(<span class="dt">colours =</span> <span class="kw"><a href="https://rdrr.io/r/base/rev.html">rev</a></span>(paleta), <span class="dt">name =</span> <span class="st">"Poblacion</span><span class="ch">\n</span><span class="st">adulto mayor"</span>) <span class="op">+</span></span>
+<span id="cb2-24"><a href="#cb2-24"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">"Poblacion de 65 anios y mas en la Region de los Rios"</span>)</span></code></pre></div>
 <p><img src="basic-usage_files/figure-html/unnamed-chunk-2-1.png" width="960"></p>
 </div>
 <div id="graficar-regiones" class="section level1">
@@ -170,14 +169,13 @@
 <span id="cb3-14"><a href="#cb3-14"></a><span class="st">      </span><span class="kw">distinct</span>()</span>
 <span id="cb3-15"><a href="#cb3-15"></a>  ) <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb3-16"><a href="#cb3-16"></a><span class="st">  </span><span class="kw">left_join</span>(poblacion_adulto_mayor_regiones)</span>
-<span id="cb3-17"><a href="#cb3-17"></a><span class="co">#&gt; Joining, by = "codigo_region"</span></span>
-<span id="cb3-18"><a href="#cb3-18"></a><span class="co">#&gt; Joining, by = "codigo_region"</span></span>
-<span id="cb3-19"><a href="#cb3-19"></a></span>
-<span id="cb3-20"><a href="#cb3-20"></a><span class="kw">ggplot</span>(region_los_rios) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb3-21"><a href="#cb3-21"></a><span class="st">  </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> pob_adulto_mayor)) <span class="op">+</span></span>
-<span id="cb3-22"><a href="#cb3-22"></a><span class="st">  </span><span class="kw">geom_sf_label</span>(<span class="kw">aes</span>(<span class="dt">label =</span> nombre_region)) <span class="op">+</span></span>
-<span id="cb3-23"><a href="#cb3-23"></a><span class="st">  </span><span class="kw">scale_fill_gradientn</span>(<span class="dt">colours =</span> <span class="kw"><a href="https://rdrr.io/r/base/rev.html">rev</a></span>(paleta), <span class="dt">name =</span> <span class="st">"Poblacion</span><span class="ch">\n</span><span class="st">adulto mayor"</span>) <span class="op">+</span></span>
-<span id="cb3-24"><a href="#cb3-24"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">"Poblacion de 65 anios y mas en la Region de los Rios"</span>)</span></code></pre></div>
+<span id="cb3-17"><a href="#cb3-17"></a><span class="co">#&gt; Joining, by = "codigo_region"Joining, by = "codigo_region"</span></span>
+<span id="cb3-18"><a href="#cb3-18"></a></span>
+<span id="cb3-19"><a href="#cb3-19"></a><span class="kw">ggplot</span>(region_los_rios) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb3-20"><a href="#cb3-20"></a><span class="st">  </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> pob_adulto_mayor)) <span class="op">+</span></span>
+<span id="cb3-21"><a href="#cb3-21"></a><span class="st">  </span><span class="kw">geom_sf_label</span>(<span class="kw">aes</span>(<span class="dt">label =</span> nombre_region)) <span class="op">+</span></span>
+<span id="cb3-22"><a href="#cb3-22"></a><span class="st">  </span><span class="kw">scale_fill_gradientn</span>(<span class="dt">colours =</span> <span class="kw"><a href="https://rdrr.io/r/base/rev.html">rev</a></span>(paleta), <span class="dt">name =</span> <span class="st">"Poblacion</span><span class="ch">\n</span><span class="st">adulto mayor"</span>) <span class="op">+</span></span>
+<span id="cb3-23"><a href="#cb3-23"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">"Poblacion de 65 anios y mas en la Region de los Rios"</span>)</span></code></pre></div>
 <p><img src="basic-usage_files/figure-html/unnamed-chunk-3-1.png" width="960"></p>
 </div>
 <div id="ejercicios-para-el-usuario" class="section level1">

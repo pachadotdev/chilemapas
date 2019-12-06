@@ -8,14 +8,13 @@
 
 # Acerca de
 
-Proporciona datos y funciones para facilitar la elaboracion de mapas de Chile usando R.
-
-Estos mapas no  tienen precision geodesica, por lo que aplica DFL-83 de 1979 de la Republica
+Mapas terrestres con topologias simplificadas. Estos mapas no 
+tienen precision geodesica, por lo que aplica DFL-83 de 1979 de la Republica
 de Chile y se consideran referenciales sin validez legal.
-
 No se incluyen los territorios antarticos y bajo ningun evento estos mapas
 significan que exista una cesion u ocupacion de territorios soberanos en
-contra del Derecho Internacional por parte de Chile.
+contra del Derecho Internacional por parte de Chile. Esta paquete esta documentado intencionalmente
+en castellano asciificado para que funcione sin problema en diferentes plataformas.
 
 # Documentacion
 

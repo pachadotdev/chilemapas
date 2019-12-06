@@ -5,12 +5,12 @@
   ],
   "@type": "SoftwareSourceCode",
   "identifier": "chilemapas",
-  "description": "Mapas terrestres con topologias simplificadas. Estos mapas no \n  tienen precision geodesica, por lo que aplica DFL-83 de 1979 de la Republica\n  de Chile y se consideran referenciales sin validez legal.\n  No se incluyen los territorios antarticos y bajo ningun evento estos mapas\n  significan que exista una cesion u ocupacion de territorios soberanos en\n  contra del Derecho Internacional por parte de Chile.",
+  "description": "Mapas terrestres con topologias simplificadas. Estos mapas no \n  tienen precision geodesica, por lo que aplica DFL-83 de 1979 de la Republica\n  de Chile y se consideran referenciales sin validez legal.\n  No se incluyen los territorios antarticos y bajo ningun evento estos mapas\n  significan que exista una cesion u ocupacion de territorios soberanos en\n  contra del Derecho Internacional por parte de Chile. Esta paquete esta \n  documentado intencionalmente en castellano asciificado para que funcione sin \n  problema en diferentes plataformas.",
   "name": "chilemapas: Mapas de las Divisiones Politicas y Administrativas de Chile",
   "codeRepository": "https://pacha.hk/chilemapas/",
   "issueTracker": "https://github.com/pachamaltese/chilemapas/issues",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "0.1",
+  "version": "0.1.1",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
@@ -206,7 +206,7 @@
     }
   ],
   "readme": "https://github.com/pachamaltese/chilemapas/blob/master/README.md",
-  "fileSize": "1231.134KB",
+  "fileSize": "1231.23KB",
   "contIntegration": "https://codecov.io/gh/pachamaltese/chilemapas?branch=master",
   "developmentStatus": "https://www.repostatus.org/#active"
 }
