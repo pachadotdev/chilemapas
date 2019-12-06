@@ -23,11 +23,7 @@ de uso de las funciones del paquete chilemapas y como se integra con otros paque
 
 # Instalacion
 
+Ejecuta el siguiente codigo en RStudio.
 ```
-# desde CRAN
-install.packages("chilemapas")
-
-# desde github
-if (!require("remotes")) { install.packages("remotes") }
-remotes::install_github("pachamaltese/chilemapas")
+source("https://install-github.me/pachamaltese/chilemapas")
 ```

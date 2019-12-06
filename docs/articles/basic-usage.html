@@ -133,7 +133,7 @@
 <span id="cb2-7"><a href="#cb2-7"></a></span>
 <span id="cb2-8"><a href="#cb2-8"></a>provincias_los_rios &lt;-<span class="st"> </span>mapa_comunas <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb2-9"><a href="#cb2-9"></a><span class="st">  </span><span class="kw"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(codigo_region <span class="op">==</span><span class="st"> </span><span class="dv">14</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb2-10"><a href="#cb2-10"></a><span class="st">  </span><span class="kw"><a href="../reference/mapa_provincias.html">mapa_provincias</a></span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb2-10"><a href="#cb2-10"></a><span class="st">  </span><span class="kw">mapa_provincias</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb2-11"><a href="#cb2-11"></a><span class="st">  </span><span class="kw">left_join</span>(</span>
 <span id="cb2-12"><a href="#cb2-12"></a>    codigos_territoriales <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb2-13"><a href="#cb2-13"></a><span class="st">      </span><span class="kw">select</span>(<span class="kw">matches</span>(<span class="st">"provincia"</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
@@ -162,7 +162,7 @@
 <span id="cb3-7"><a href="#cb3-7"></a></span>
 <span id="cb3-8"><a href="#cb3-8"></a>region_los_rios &lt;-<span class="st"> </span>mapa_comunas <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb3-9"><a href="#cb3-9"></a><span class="st">  </span><span class="kw"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(codigo_region <span class="op">==</span><span class="st"> </span><span class="dv">14</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb3-10"><a href="#cb3-10"></a><span class="st">  </span><span class="kw"><a href="../reference/mapa_regiones.html">mapa_regiones</a></span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="st">  </span><span class="kw">mapa_regiones</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb3-11"><a href="#cb3-11"></a><span class="st">  </span><span class="kw">left_join</span>(</span>
 <span id="cb3-12"><a href="#cb3-12"></a>    codigos_territoriales <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb3-13"><a href="#cb3-13"></a><span class="st">      </span><span class="kw">select</span>(<span class="kw">matches</span>(<span class="st">"region"</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
