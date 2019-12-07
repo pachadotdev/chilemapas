@@ -27,3 +27,25 @@ Ejecuta el siguiente codigo en RStudio.
 ```
 source("https://install-github.me/pachamaltese/chilemapas")
 ```
+
+# Mapas en geojson y topojson
+
+Para quienes no usan R, las carpetas data_geojson y data_topojson contienen
+los mapas simplificados de todas las comunas de Chile.
+
+# Valor agregado sobre los archivos shp del INE
+
+Aparte de la simplificacion para reducir el peso de los archivos, los aportes se
+pueden divir en dos pilares:
+
+* Mapas administrativos: Construi el mapa de la Region de Niuble haciendo todas las
+transformaciones correspondientes sobre la Region del Bio Bio. Otro aporte es el
+mapa de servicios de salud recopilando datos de diversas fuentes.
+
+* Mapa politico: Reuni datos para generar el mapa de distritos y circunscripciones
+con los diputados y senadores que les asigna la ley.
+
+# Pendientes
+
+Aun esta pendiente el mapa de zonas hasta tener respuesta sobre los cambios a
+las geozonas.
