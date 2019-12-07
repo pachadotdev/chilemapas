@@ -141,7 +141,7 @@ if (!file.exists(communes_map_file)) {
   )
 
   map2(
-    communes_map,
+    mapa_comunas,
     sprintf("%s/r%s.topojson", communes_topojson_dir, sort(region_attributes_id_new)),
     save_as_topojson
   )

@@ -16,9 +16,18 @@ tidy_sf <- function(x, simplify = TRUE, unit = "commune", keep = 0.05) {
     d <- rmapshaper::ms_simplify(d, keep = keep)
   }
 
-  names(d) <- c("codigo_region", "nombre_region", "codigo_provincia",
-                "nombre_provincia", "codigo_comuna", "nombre_comuna",
-                "shape_length", "shape_area", "geometry")
+  if (unit == "commune") {
+    names(d) <- c("codigo_region", "nombre_region", "codigo_provincia",
+                  "nombre_provincia", "codigo_comuna", "nombre_comuna",
+                  "shape_length", "shape_area", "geometry")
+  }
+
+  if (unit == "zone") {
+    names(d) <- c("codigo_region", "nombre_region", "codigo_provincia",
+                  "nombre_provincia", "codigo_comuna", "nombre_comuna",
+                  "urbano", "distrito", "zona", "geocodigo",
+                  "shape_length", "shape_area", "geometry")
+  }
 
   # fix unofficial ids and asciify strings
 
@@ -118,12 +127,25 @@ remove_col <- function(x,col) {
   return(x)
 }
 
-move_cols <- function(x, aggregation = "region") {
+move_cols <- function(x, aggregation = "commune") {
   if (aggregation == "commune") {
     x <- x[,c("codigo_comuna", "nombre_comuna", "codigo_provincia", "nombre_provincia", "codigo_region", "nombre_region", "geometry")]
-  } else {
-    stop()
+  }
+
+  if (aggregation == "zone") {
+    x <- x[,c("geocodigo", "codigo_comuna", "nombre_comuna", "codigo_provincia", "nombre_provincia", "codigo_region", "nombre_region", "geometry")]
   }
 
   return(x)
+}
+
+leading_zeroes <- function(d, aggregation = "commune") {
+  d <- d
+  if (aggregation == "zone") {
+    d$geocodigo <- str_pad(d$geocodigo, 11, "left", "0")
+  }
+  d$codigo_region <- str_pad(d$codigo_region, 2, "left", "0")
+  d$codigo_provincia <- str_pad(d$codigo_provincia, 3, "left", "0")
+  d$codigo_comuna <- str_pad(d$codigo_comuna, 5, "left", "0")
+  return(d)
 }
