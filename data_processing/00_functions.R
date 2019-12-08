@@ -81,17 +81,22 @@ tidy_sf <- function(x, simplify = TRUE, unit = "commune", keep = 0.05) {
   return(d)
 }
 
-save_as_geojson <- function(x,y) {
+save_as_geojson <- function(x, y, aggregation = "commune") {
   if (!file.exists(y)) {
-    x <- x %>% select(ends_with("_id"), geometry)
+    if (aggregation == "commune") {
+      x <- x %>% select(starts_with("codigo_"), geometry)
+    }
     sf::write_sf(x, dsn = y, driver = "GeoJSON")
   }
 }
 
-save_as_topojson <- function(x,y) {
+save_as_topojson <- function(x, y, aggregation = "commune") {
   if (!file.exists(y)) {
+    if (aggregation == "commune") {
+      x <- x %>% select(starts_with("codigo_"), geometry)
+    }
     geojsonio::topojson_write(
-      input = x %>% select(ends_with("_id"), geometry),
+      input = x,
       file = y,
       object_name = str_replace_all(y,".*[:alnum:]/|.geojson|.topojson", ""),
       overwrite = F
@@ -147,5 +152,11 @@ leading_zeroes <- function(d, aggregation = "commune") {
   d$codigo_region <- str_pad(d$codigo_region, 2, "left", "0")
   d$codigo_provincia <- str_pad(d$codigo_provincia, 3, "left", "0")
   d$codigo_comuna <- str_pad(d$codigo_comuna, 5, "left", "0")
+  return(d)
+}
+
+trim_regions <- function(d) {
+  d <- d
+  d$codigo_region <- str_sub(d$codigo_region, -2, -1)
   return(d)
 }

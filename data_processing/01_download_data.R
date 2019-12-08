@@ -23,6 +23,9 @@ try(dir.create(topojson_dir))
 communes_topojson_dir <- sprintf("%s/comunas", topojson_dir)
 try(dir.create(communes_topojson_dir))
 
+zones_topojson_dir <- sprintf("%s/zonas", topojson_dir)
+try(dir.create(zones_topojson_dir))
+
 # geojson dirs -----------------------------------------------------------
 
 geojson_dir <- "data_geojson"
@@ -30,6 +33,9 @@ try(dir.create(geojson_dir))
 
 communes_geojson_dir <- sprintf("%s/comunas", geojson_dir)
 try(dir.create(communes_geojson_dir))
+
+zones_geojson_dir <- sprintf("%s/zonas", geojson_dir)
+try(dir.create(zones_geojson_dir))
 
 # SUBDERE territorial codes -----------------------------------------------
 

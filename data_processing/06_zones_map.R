@@ -79,27 +79,30 @@ if (!file.exists(zones_map_file)) {
 
   mapa_zonas <- map(zones_map, ~leading_zeroes(.x, aggregation = "zone"))
 
-  # que pasa con geocodigo 16 ava region???
-  # map2(
-  #   mapa_comunas,
-  #   sprintf("%s/r%s.geojson", communes_geojson_dir, sort(region_attributes_id_new)),
-  #   save_as_geojson
-  # )
-  #
-  # map2(
-  #   mapa_comunas,
-  #   sprintf("%s/r%s.topojson", communes_topojson_dir, sort(region_attributes_id_new)),
-  #   save_as_topojson
-  # )
-  #
-  # mapa_comunas <- do.call(rbind, mapa_comunas)
-  #
-  # mapa_comunas <- mapa_comunas %>%
-  #   select(codigo_comuna, codigo_provincia, codigo_region, geometry)
-  #
-  # mapa_comunas <- rmapshaper::ms_simplify(mapa_comunas, keep = 0.3)
-  #
-  # save(mapa_comunas, file = zones_map_file, compress = "xz")
+  mapa_zonas <- map(zones_map, ~trim_regions(.x))
+
+  mapa_zonas[[16]] <- mapa_zonas[[16]] %>%
+    mutate(geocodigo = paste0(codigo_comuna, str_sub(geocodigo, 6, 11)))
+
+  map2(
+    mapa_zonas,
+    sprintf("%s/r%s.geojson", zones_geojson_dir, sort(region_attributes_id_new)),
+    save_as_geojson,
+    aggregation = "zone"
+  )
+
+  map2(
+    mapa_zonas,
+    sprintf("%s/r%s.topojson", zones_topojson_dir, sort(region_attributes_id_new)),
+    save_as_topojson,
+    aggregation = "zone"
+  )
+
+  mapa_zonas <- do.call(rbind, mapa_zonas)
+
+  mapa_zonas <- rmapshaper::ms_simplify(mapa_zonas, keep = 0.3)
+
+  save(mapa_zonas, file = zones_map_file, compress = "xz")
 } else{
   load(zones_map_file)
 }

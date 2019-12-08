@@ -22,6 +22,6 @@ Un data frame con 346 observaciones y cuatro columnas.
 Elaboracion propia con base en datos de Instituto Nacional de Estadisticas (INE) y Subsecretaria de Desarrollo Regional (SUBDERE).
 }
 \examples{
-divisiones_salud
+mapa_comunas
 }
 \keyword{datasets}

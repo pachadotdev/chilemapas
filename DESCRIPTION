@@ -1,7 +1,7 @@
 Package: chilemapas
 Type: Package
 Title: Mapas de las Divisiones Politicas y Administrativas de Chile
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: c(
     person("Mauricio", "Vargas", role = c("aut", "cre"),
       email = "mvargas@dcc.uchile.cl"),

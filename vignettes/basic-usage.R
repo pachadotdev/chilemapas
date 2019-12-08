@@ -80,3 +80,35 @@ ggplot(region_los_rios) +
   scale_fill_gradientn(colours = rev(paleta), name = "Poblacion\nadulto mayor") +
   labs(title = "Poblacion de 65 anios y mas en la Region de los Rios")
 
+## ---- warning=FALSE------------------------------------------------------
+comunas_santiago <- mapa_comunas %>% 
+  filter(
+    codigo_provincia == 131 |
+    codigo_comuna %in% c(13401, 13201, 13301)
+  ) %>% 
+  left_join(codigos_territoriales)
+
+set.seed(200100)
+
+zonas_metropolitana <- mapa_zonas %>% 
+  filter(
+    codigo_provincia == 131 |
+    codigo_comuna %in% c(13401, 13201, 13301)
+  )
+
+zonas_metropolitana <- zonas_metropolitana %>% 
+  mutate(
+    valor_aleatorio = rnorm(nrow(zonas_metropolitana))
+  )
+
+paleta <- c("#628ca5", "#dca761")
+
+ggplot() + 
+  geom_sf(data = zonas_metropolitana, aes(fill = valor_aleatorio)) +
+  geom_sf(data = comunas_santiago, colour = "#514f5c", fill = NA) +
+  geom_sf_label(data = comunas_santiago, aes(label = nombre_comuna)) +
+  scale_fill_gradientn(colours = paleta, name = "Valor aleatorio") +
+  ylim(-33.65, -33.31) +
+  xlim(-70.81, -70.45) +
+  labs(title = "Datos simulados para la Región Metropolitana")
+
