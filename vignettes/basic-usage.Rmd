@@ -116,7 +116,7 @@ ggplot(region_los_rios) +
 En el caso de contar con datos a nivel zonal (agregación de manzanas),
 se provee un dataset de todas las zonas urbanas contempladas en el CENSO.
 
-```{r, warning=FALSE}
+```{r, fig.width=9, fig.height=7, warning=FALSE}
 comunas_santiago <- mapa_comunas %>% 
   filter(
     codigo_provincia == 131 |

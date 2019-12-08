@@ -80,7 +80,7 @@ ggplot(region_los_rios) +
   scale_fill_gradientn(colours = rev(paleta), name = "Poblacion\nadulto mayor") +
   labs(title = "Poblacion de 65 anios y mas en la Region de los Rios")
 
-## ---- warning=FALSE------------------------------------------------------
+## ---- fig.width=10, warning=FALSE----------------------------------------
 comunas_santiago <- mapa_comunas %>% 
   filter(
     codigo_provincia == 131 |
