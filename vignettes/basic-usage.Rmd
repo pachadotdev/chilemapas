@@ -142,7 +142,6 @@ paleta <- c("#628ca5", "#dca761")
 ggplot() + 
   geom_sf(data = zonas_metropolitana, aes(fill = valor_aleatorio)) +
   geom_sf(data = comunas_santiago, colour = "#2A2B75", fill = NA) +
-  geom_sf_label(data = comunas_santiago, aes(label = nombre_comuna)) +
   scale_fill_gradientn(colours = paleta, name = "Valor aleatorio") +
   ylim(-33.65, -33.31) +
   xlim(-70.81, -70.45) +
