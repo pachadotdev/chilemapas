@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Divisiones electorales oficiales — divisiones_electorales • chilemapas</title>
+<title>Cifras de poblacion oficiales por zona — censo_2017_zonas • chilemapas</title>
 
 
 <!-- jquery -->
@@ -35,11 +35,8 @@
 
 
 
-<meta property="og:title" content="Divisiones electorales oficiales — divisiones_electorales" />
-<meta property="og:description" content="Contiene las agrupaciones de las distintas comunas en circunscripciones
-(eleccion de senadores) y distritos (eleccion de diputados) junto con la
-cantidad de senadores y diputados que le corresponden a cada division
-segun la legislacion vigente." />
+<meta property="og:title" content="Cifras de poblacion oficiales por zona — censo_2017_zonas" />
+<meta property="og:description" content="Contiene los registros de poblacion desagregados por zona y edad." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -115,51 +112,46 @@ segun la legislacion vigente." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Divisiones electorales oficiales</h1>
+    <h1>Cifras de poblacion oficiales por zona</h1>
     
-    <div class="hidden name"><code>divisiones_electorales.Rd</code></div>
+    <div class="hidden name"><code>censo_2017_zonas.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Contiene las agrupaciones de las distintas comunas en circunscripciones
-(eleccion de senadores) y distritos (eleccion de diputados) junto con la
-cantidad de senadores y diputados que le corresponden a cada division
-segun la legislacion vigente.</p>
+    <p>Contiene los registros de poblacion desagregados por zona y edad.</p>
     </div>
 
-    <pre class="usage"><span class='no'>divisiones_electorales</span></pre>
+    <pre class="usage"><span class='no'>censo_2017_zonas</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>Un data frame con 346 observaciones y cinco columnas.</p><dl class='dl-horizontal'>
-    <dt><code>codigo_comuna</code></dt><dd><p>vector de texto</p></dd>
-    <dt><code>codigo_circunscripcion</code></dt><dd><p>vector de texto</p></dd>
-    <dt><code>senadores_circunscripcion</code></dt><dd><p>vector numerico</p></dd>
-    <dt><code>codigo_distrito</code></dt><dd><p>vector de texto</p></dd>
-    <dt><code>diputados_distrito</code></dt><dd><p>vector numerico</p></dd>
+    <p>Un data frame con 64.212 observaciones y tres columnas.</p><dl class='dl-horizontal'>
+    <dt><code>geocodigo</code></dt><dd><p>vector de texto</p></dd>
+    <dt><code>edad</code></dt><dd><p>vector categorico</p></dd>
+    <dt><code>poblacion</code></dt><dd><p>vector numerico</p></dd>
   
 </dl>
 
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>Elaboracion propia con base en datos de Biblioteca del Congreso Nacional de Chile (BCN).</p>
+    <p>Elaboracion propia con base en datos de Instituto Nacional de Estadisticas (INE).</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>divisiones_electorales</span></div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 346 x 5</span><span>
-#&gt;    codigo_comuna codigo_circunsc… senadores_circu… codigo_distrito
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>         </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                       </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>          
-#&gt; </span><span style='color: #555555;'> 1</span><span> 15101         01                              2 01             
-#&gt; </span><span style='color: #555555;'> 2</span><span> 15102         01                              2 01             
-#&gt; </span><span style='color: #555555;'> 3</span><span> 15202         01                              2 01             
-#&gt; </span><span style='color: #555555;'> 4</span><span> 15201         01                              2 01             
-#&gt; </span><span style='color: #555555;'> 5</span><span> 01107         02                              2 02             
-#&gt; </span><span style='color: #555555;'> 6</span><span> 01402         02                              2 02             
-#&gt; </span><span style='color: #555555;'> 7</span><span> 01403         02                              2 02             
-#&gt; </span><span style='color: #555555;'> 8</span><span> 01404         02                              2 02             
-#&gt; </span><span style='color: #555555;'> 9</span><span> 01101         02                              2 02             
-#&gt; </span><span style='color: #555555;'>10</span><span> 01405         02                              2 02             
-#&gt; </span><span style='color: #555555;'># … with 336 more rows, and 1 more variable: diputados_distrito </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span></div></span></pre>
+    <pre class="examples"><div class='input'><span class='no'>censo_2017_zonas</span></div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 64,212 x 3</span><span>
+#&gt;    geocodigo   edad  poblacion
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #555555;'> 1</span><span> 01101011001 0 a 5       189
+#&gt; </span><span style='color: #555555;'> 2</span><span> 01101011002 0 a 5       101
+#&gt; </span><span style='color: #555555;'> 3</span><span> 01101021001 0 a 5        74
+#&gt; </span><span style='color: #555555;'> 4</span><span> 01101021002 0 a 5         4
+#&gt; </span><span style='color: #555555;'> 5</span><span> 01101021003 0 a 5       234
+#&gt; </span><span style='color: #555555;'> 6</span><span> 01101021004 0 a 5       252
+#&gt; </span><span style='color: #555555;'> 7</span><span> 01101021005 0 a 5       490
+#&gt; </span><span style='color: #555555;'> 8</span><span> 01101031001 0 a 5       234
+#&gt; </span><span style='color: #555555;'> 9</span><span> 01101031002 0 a 5       277
+#&gt; </span><span style='color: #555555;'>10</span><span> 01101031003 0 a 5       445
+#&gt; </span><span style='color: #555555;'># … with 64,202 more rows</span><span></div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

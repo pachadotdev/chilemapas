@@ -50,3 +50,8 @@ census_data_url <- "http://www.censo2017.cl/wp-content/uploads/2017/12/Cantidad-
 census_data_xlsx <- sprintf("%s/census_data_by_sex_and_age.xlsx", raw_dir)
 
 download_file(census_data_url, census_data_xlsx)
+
+census_zone_data_url <- "http://www.censo2017.cl/descargas/microdatos/Censo2017_ManzanaEntidad_CSV.zip"
+census_zone_data_zip <- sprintf("%s/census_data_by_zone.zip", raw_dir)
+
+download_file(census_zone_data_url, census_zone_data_zip)

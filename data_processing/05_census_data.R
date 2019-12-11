@@ -1,4 +1,4 @@
-# Extract raw census ------------------------------------------------------
+# census by commune ----
 
 tidy_census_file <- sprintf("%s/censo_2017_comunas.rda", data_dir)
 
@@ -66,4 +66,51 @@ census_file_csv <- sprintf("%s/censo_2017_comunas.csv", csv_dir)
 
 if (!file.exists(census_file_csv)) {
   fwrite(censo_2017_comunas, file = census_file_csv)
+}
+
+# census by zone ----
+
+census_zone_rda <- "data/censo_2017_zonas.rda"
+
+if (!file.exists(census_zone_rda)) {
+  censo_2017_zonas <- fread("data_raw/census_data_by_zone/Censo2017_16R_ManzanaEntidad_CSV/Censo2017_Manzanas.csv",
+                            sep = ";") %>%
+    clean_names() %>%
+    select(id_manzent, matches("edad")) %>%
+    as_tibble() %>%
+    rename(geocodigo = id_manzent) %>%
+    mutate(geocodigo = as.character(geocodigo)) %>%
+    mutate(
+      geocodigo = str_pad(geocodigo, 14, "left", "0")
+      # geocodigo = str_sub(geocodigo, 1 ,11)
+    ) %>%
+
+    group_by(geocodigo) %>%
+    mutate_if(is.character, as.numeric) %>%
+    summarise_if(is.numeric, sum, na.rm = T) %>%
+    ungroup() %>%
+
+    mutate(geocodigo = str_sub(geocodigo, 1, 11)) %>%
+    group_by(geocodigo) %>%
+    summarise_if(is.numeric, sum, na.rm = T) %>%
+
+    gather(edad, poblacion, -geocodigo)
+
+  censo_2017_zonas <- censo_2017_zonas %>%
+    mutate(
+      edad = str_replace_all(edad, "edad_", ""),
+      edad = str_replace_all(edad, "a", " a "),
+      edad = str_replace_all(edad, "ym a s", " y mas"),
+      edad = as_factor(edad)
+    )
+
+  save(censo_2017_zonas, file = "data/censo_2017_zonas.rda", compress = "xz")
+} else {
+  load(census_zone_rda)
+}
+
+census_zone_csv <- sprintf("%s/censo_2017_zonas.csv", csv_dir)
+
+if (!file.exists(census_zone_csv)) {
+  fwrite(censo_2017_zonas, file = census_zone_csv)
 }

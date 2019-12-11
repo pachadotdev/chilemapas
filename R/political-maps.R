@@ -9,9 +9,9 @@
 #' @importFrom rlang sym
 #' @return Un objeto de clase sf y data.frame.
 #' @examples
-#' mapa_circunscripciones()
+#' generar_circunscripciones()
 #' @export
-mapa_circunscripciones <- function(mapa = chilemapas::mapa_comunas) {
+generar_circunscripciones <- function(mapa = chilemapas::mapa_comunas) {
   mapa %>%
     left_join(
       chilemapas::divisiones_electorales %>% select(!!sym("codigo_comuna"), !!sym("codigo_circunscripcion"))
@@ -38,9 +38,9 @@ mapa_circunscripciones <- function(mapa = chilemapas::mapa_comunas) {
 #' @importFrom rlang sym
 #' @return Un objeto de clase sf y data.frame.
 #' @examples
-#' mapa_distritos()
+#' generar_distritos()
 #' @export
-mapa_distritos <- function(mapa = chilemapas::mapa_comunas) {
+generar_distritos <- function(mapa = chilemapas::mapa_comunas) {
   mapa %>%
     left_join(
       chilemapas::divisiones_electorales %>% select(!!sym("codigo_comuna"), !!sym("codigo_distrito"))

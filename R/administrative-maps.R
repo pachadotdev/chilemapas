@@ -9,9 +9,9 @@
 #' @importFrom rlang sym
 #' @return Un objeto de clase sf y data.frame.
 #' @examples
-#' mapa_provincias()
+#' generar_provincias()
 #' @export
-mapa_provincias <- function(mapa = chilemapas::mapa_comunas) {
+generar_provincias <- function(mapa = chilemapas::mapa_comunas) {
   ms_dissolve(mapa, field = "codigo_provincia") %>%
     left_join(
       chilemapas::codigos_territoriales %>% select(!!sym("codigo_provincia"), !!sym("codigo_region"))
@@ -25,9 +25,9 @@ mapa_provincias <- function(mapa = chilemapas::mapa_comunas) {
 #' @importFrom rmapshaper ms_dissolve
 #' @return Un objeto de clase sf y data.frame.
 #' @examples
-#' mapa_regiones()
+#' generar_regiones()
 #' @export
-mapa_regiones <- function(mapa = chilemapas::mapa_comunas) {
+generar_regiones <- function(mapa = chilemapas::mapa_comunas) {
   ms_dissolve(mapa, field = "codigo_region")
 }
 
@@ -39,9 +39,9 @@ mapa_regiones <- function(mapa = chilemapas::mapa_comunas) {
 #' @importFrom rmapshaper ms_dissolve
 #' @return Un objeto de clase sf y data.frame.
 #' @examples
-#' mapa_salud()
+#' generar_servicios_salud()
 #' @export
-mapa_salud <- function(mapa = chilemapas::mapa_comunas) {
+generar_servicios_salud <- function(mapa = chilemapas::mapa_comunas) {
   mapa %>%
     left_join(chilemapas::divisiones_salud) %>%
     ms_dissolve(field = "codigo_servicio_salud")

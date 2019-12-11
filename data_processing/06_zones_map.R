@@ -79,8 +79,6 @@ if (!file.exists(zones_map_file)) {
 
   mapa_zonas <- map(zones_map, ~leading_zeroes(.x, aggregation = "zone"))
 
-  mapa_zonas <- map(zones_map, ~trim_regions(.x))
-
   mapa_zonas[[16]] <- mapa_zonas[[16]] %>%
     mutate(geocodigo = paste0(codigo_comuna, str_sub(geocodigo, 6, 11)))
 

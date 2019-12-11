@@ -152,11 +152,7 @@ leading_zeroes <- function(d, aggregation = "commune") {
   d$codigo_region <- str_pad(d$codigo_region, 2, "left", "0")
   d$codigo_provincia <- str_pad(d$codigo_provincia, 3, "left", "0")
   d$codigo_comuna <- str_pad(d$codigo_comuna, 5, "left", "0")
-  return(d)
-}
 
-trim_regions <- function(d) {
-  d <- d
   d$codigo_region <- str_sub(d$codigo_region, -2, -1)
   return(d)
 }

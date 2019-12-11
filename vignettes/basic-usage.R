@@ -32,7 +32,8 @@ ggplot(comunas_los_rios) +
   geom_sf(aes(fill = pob_adulto_mayor)) +
   geom_sf_label(aes(label = nombre_comuna)) +
   scale_fill_gradientn(colours = rev(paleta), name = "Poblacion\nadulto mayor") +
-  labs(title = "Poblacion de 65 anios y mas en la Region de los Rios")
+  labs(title = "Poblacion de 65 anios y mas en la Region de los Rios") +
+  theme_minimal(base_size = 13)
 
 ## ---- fig.width=10, warning=FALSE----------------------------------------
 poblacion_adulto_mayor_provincias <- censo_2017_comunas %>% 
@@ -43,7 +44,7 @@ poblacion_adulto_mayor_provincias <- censo_2017_comunas %>%
 
 provincias_los_rios <- mapa_comunas %>% 
   filter(codigo_region == 14) %>% 
-  mapa_provincias() %>% 
+  generar_provincias() %>% 
   left_join(
     codigos_territoriales %>% 
       select(matches("provincia")) %>% 
@@ -55,7 +56,8 @@ ggplot(provincias_los_rios) +
   geom_sf(aes(fill = pob_adulto_mayor)) +
   geom_sf_label(aes(label = nombre_provincia)) +
   scale_fill_gradientn(colours = rev(paleta), name = "Poblacion\nadulto mayor") +
-  labs(title = "Poblacion de 65 anios y mas en la Region de los Rios")
+  labs(title = "Poblacion de 65 anios y mas en la Region de los Rios") +
+  theme_minimal(base_size = 13)
 
 ## ---- fig.width=10, warning=FALSE----------------------------------------
 poblacion_adulto_mayor_regiones <- censo_2017_comunas %>% 
@@ -66,7 +68,7 @@ poblacion_adulto_mayor_regiones <- censo_2017_comunas %>%
 
 region_los_rios <- mapa_comunas %>% 
   filter(codigo_region == 14) %>% 
-  mapa_regiones() %>% 
+  generar_regiones() %>% 
   left_join(
     codigos_territoriales %>% 
       select(matches("region")) %>% 
@@ -78,37 +80,29 @@ ggplot(region_los_rios) +
   geom_sf(aes(fill = pob_adulto_mayor)) +
   geom_sf_label(aes(label = nombre_region)) +
   scale_fill_gradientn(colours = rev(paleta), name = "Poblacion\nadulto mayor") +
-  labs(title = "Poblacion de 65 anios y mas en la Region de los Rios")
+  labs(title = "Poblacion de 65 anios y mas en la Region de los Rios") +
+  theme_minimal(base_size = 13)
 
 ## ---- fig.width=10, warning=FALSE----------------------------------------
-comunas_santiago <- mapa_comunas %>% 
-  filter(
-    codigo_provincia == 131 |
-    codigo_comuna %in% c(13401, 13201, 13301)
-  ) %>% 
-  left_join(codigos_territoriales)
-
-set.seed(200100)
-
-zonas_metropolitana <- mapa_zonas %>% 
-  filter(
-    codigo_provincia == 131 |
-    codigo_comuna %in% c(13401, 13201, 13301)
-  )
-
-zonas_metropolitana <- zonas_metropolitana %>% 
-  mutate(
-    valor_aleatorio = rnorm(nrow(zonas_metropolitana))
+zonas_valdivia <- mapa_zonas %>% 
+  filter(codigo_comuna == "14101") %>% 
+  inner_join(
+    censo_2017_zonas %>% 
+      filter(
+        substr(geocodigo, 1, 2) == 14,
+        as.integer(edad) >= 4
+      )
   )
 
 paleta <- c("#628ca5", "#dca761")
 
 ggplot() + 
-  geom_sf(data = zonas_metropolitana, aes(fill = valor_aleatorio)) +
-  geom_sf(data = comunas_santiago, colour = "#514f5c", fill = NA) +
-  geom_sf_label(data = comunas_santiago, aes(label = nombre_comuna)) +
-  scale_fill_gradientn(colours = paleta, name = "Valor aleatorio") +
-  ylim(-33.65, -33.31) +
-  xlim(-70.81, -70.45) +
-  labs(title = "Datos simulados para la Región Metropolitana")
+  geom_sf(data = zonas_valdivia, aes(fill = poblacion)) +
+  geom_sf(data = filter(comunas_los_rios, codigo_comuna == "14101"),
+          colour = "#2A2B75", fill = NA) +
+  ylim(-39.9, -39.78) +
+  xlim(-73.4, -73.17) +
+  scale_fill_gradientn(colors = paleta, name = "Población") +
+  labs(title = "Poblacion de 65 anios y mas en la Comuna de Valdivia") +
+  theme_minimal(base_size = 13)
 
