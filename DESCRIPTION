@@ -1,7 +1,8 @@
 Package: chilemapas
 Type: Package
 Title: Mapas de las Divisiones Politicas y Administrativas de Chile
-Version: 0.1.3
+    (Maps of the Political and Administrative Divisions of Chile)
+Version: 0.1.4
 Authors@R: c(
     person("Mauricio", "Vargas", role = c("aut", "cre"),
       email = "mvargas@dcc.uchile.cl"),
@@ -20,21 +21,28 @@ Authors@R: c(
     person(family = "Biblioteca del Congreso Nacional de Chile (BCN)",
       role = "dtc")
     )
-URL: https://pacha.hk/chilemapas/
+URL: https://pachamaltese.github.io/chilemapas/
 BugReports: https://github.com/pachamaltese/chilemapas/issues
 Description: Mapas terrestres con topologias simplificadas. Estos mapas no 
-  tienen precision geodesica, por lo que aplica DFL-83 de 1979 de la Republica
+  tienen precision geodesica, por lo que aplica el DFL-83 de 1979 de la Republica
   de Chile y se consideran referenciales sin validez legal.
   No se incluyen los territorios antarticos y bajo ningun evento estos mapas
   significan que exista una cesion u ocupacion de territorios soberanos en
   contra del Derecho Internacional por parte de Chile. Esta paquete esta 
   documentado intencionalmente en castellano asciificado para que funcione sin 
   problema en diferentes plataformas.
+  (Terrestrial maps with simplified toplogies. These maps lack geodesic
+  precision, therefore DFL-83 1979 of the Republic of Chile applies and are
+  consider to have no legal validity.
+  Antartic territories are excluded and under no event these maps mean
+  there is a cession or occupation of sovereign territories against International
+  Laws from Chile. This package was intentionally documented in asciified
+  spanish to make it work with problem on different platforms.)
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
 VignetteBuilder: knitr
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
 Depends: R(>= 3.5.0), sf
 Imports: rmapshaper, dplyr, magrittr, stringr, rlang
 Suggests: 
