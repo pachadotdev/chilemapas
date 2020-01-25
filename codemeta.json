@@ -5,7 +5,7 @@
   ],
   "@type": "SoftwareSourceCode",
   "identifier": "chilemapas",
-  "description": "Mapas terrestres con topologias simplificadas. Estos mapas no \n  tienen precision geodesica, por lo que aplica el DFL-83 de 1979 de la Republica\n  de Chile y se consideran referenciales sin validez legal.\n  No se incluyen los territorios antarticos y bajo ningun evento estos mapas\n  significan que exista una cesion u ocupacion de territorios soberanos en\n  contra del Derecho Internacional por parte de Chile. Esta paquete esta \n  documentado intencionalmente en castellano asciificado para que funcione sin \n  problema en diferentes plataformas.\n  (Terrestrial maps with simplified toplogies. These maps lack geodesic\n  precision, therefore DFL-83 1979 of the Republic of Chile applies and are\n  consider to have no legal validity.\n  Antartic territories are excluded and under no event these maps mean\n  there is a cession or occupation of sovereign territories against International\n  Laws from Chile. This package was intentionally documented in asciified\n  spanish to make it work with problem on different platforms.)",
+  "description": "Mapas terrestres con topologias simplificadas. Estos mapas no \n  tienen precision geodesica, por lo que aplica el DFL-83 de 1979 de la Republica\n  de Chile y se consideran referenciales sin validez legal.\n  No se incluyen los territorios antarticos y bajo ningun evento estos mapas\n  significan que exista una cesion u ocupacion de territorios soberanos en\n  contra del Derecho Internacional por parte de Chile. Esta paquete esta \n  documentado intencionalmente en castellano asciificado para que funcione sin \n  problema en diferentes plataformas.\n  (Terrestrial maps with simplified toplogies. These maps lack geodesic\n  precision, therefore DFL-83 1979 of the Republic of Chile applies and are\n  considered to have no legal validity.\n  Antartic territories are excluded and under no event these maps mean\n  there is a cession or occupation of sovereign territories against International\n  Laws from Chile. This package was intentionally documented in asciified\n  spanish to make it work without problem on different platforms.)",
   "name": "chilemapas: Mapas de las Divisiones Politicas y Administrativas de Chile\n    (Maps of the Political and Administrative Divisions of Chile)",
   "codeRepository": "https://pachamaltese.github.io/chilemapas/",
   "issueTracker": "https://github.com/pachamaltese/chilemapas/issues",
@@ -14,10 +14,10 @@
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
-    "version": "3.6.1",
+    "version": "3.6.2",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 3.6.1 (2019-07-05)",
+  "runtimePlatform": "R version 3.6.2 (2019-12-12)",
   "author": [
     {
       "@type": "Person",
@@ -206,7 +206,14 @@
     }
   ],
   "readme": "https://github.com/pachamaltese/chilemapas/blob/master/README.md",
-  "fileSize": "1779.854KB",
+  "fileSize": "1779.876KB",
   "contIntegration": "https://codecov.io/gh/pachamaltese/chilemapas?branch=master",
-  "developmentStatus": "https://www.repostatus.org/#active"
+  "developmentStatus": "https://www.repostatus.org/#active",
+  "provider": {
+    "@id": "https://cran.r-project.org",
+    "@type": "Organization",
+    "name": "Comprehensive R Archive Network (CRAN)",
+    "url": "https://cran.r-project.org"
+  },
+  "relatedLink": "https://CRAN.R-project.org/package=chilemapas"
 }

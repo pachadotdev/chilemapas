@@ -4,6 +4,7 @@
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![Codecov test coverage](https://codecov.io/gh/pachamaltese/chilemapas/branch/master/graph/badge.svg)](https://codecov.io/gh/pachamaltese/chilemapas?branch=master)
+[![CRAN status](https://www.r-pkg.org/badges/version/chilemapas)](https://cran.r-project.org/package=chilemapas)
 [![R build status](https://github.com/pachamaltese/chilemapas/workflows/R-CMD-check/badge.svg)](https://github.com/pachamaltese/chilemapas/actions?workflow=R-CMD-check)
 <!-- badges: end -->
 
@@ -19,12 +20,17 @@ en castellano asciificado para que funcione sin problema en diferentes plataform
 
 # Documentacion
 
-La documentacion esta disponible en https://pacha.hk/chilemapas. Se incluyen ejemplos
+La documentacion esta disponible en https://pacha.dev/chilemapas. Se incluyen ejemplos
 de uso de las funciones del paquete chilemapas y como se integra con otros paquetes de R.
 
-# Instalacion
+# Instalacion desde RStudio
 
-Ejecuta el siguiente codigo en RStudio.
+Version estable
+```
+install.packages("chilemapas")
+```
+
+Version de desarrollo
 ```
 source("https://install-github.me/pachamaltese/chilemapas")
 ```

@@ -75,7 +75,7 @@
       <h1>Uso basico del paquete chilemapas</h1>
                         <h4 class="author">Mauricio Vargas S.</h4>
             
-            <h4 class="date">2020-01-17</h4>
+            <h4 class="date">2020-01-25</h4>
       
       
       <div class="hidden name"><code>basic-usage.Rmd</code></div>
@@ -96,120 +96,120 @@
 <div id="graficar-comunas" class="section level2">
 <h2 class="hasAnchor">
 <a href="#graficar-comunas" class="anchor"></a>Graficar comunas</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(chilemapas)</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(dplyr)</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(ggplot2)</span>
-<span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a>poblacion_adulto_mayor_comunas &lt;-<span class="st"> </span>censo_<span class="dv">2017</span>_comunas <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="st">  </span><span class="kw"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/integer.html">as.integer</a></span>(edad) <span class="op">&gt;=</span><span class="st"> </span><span class="dv">14</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="st">  </span><span class="kw">group_by</span>(codigo_comuna) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">pob_adulto_mayor =</span> <span class="kw"><a href="https://rdrr.io/r/base/sum.html">sum</a></span>(poblacion))</span>
-<span id="cb1-9"><a href="#cb1-9"></a></span>
-<span id="cb1-10"><a href="#cb1-10"></a>comunas_los_rios &lt;-<span class="st"> </span>mapa_comunas <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="st">  </span><span class="kw"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(codigo_region <span class="op">==</span><span class="st"> </span><span class="dv">14</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-12"><a href="#cb1-12"></a><span class="st">  </span><span class="kw">left_join</span>(</span>
-<span id="cb1-13"><a href="#cb1-13"></a>    codigos_territoriales <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-14"><a href="#cb1-14"></a><span class="st">      </span><span class="kw">select</span>(<span class="kw">matches</span>(<span class="st">"comuna"</span>))</span>
-<span id="cb1-15"><a href="#cb1-15"></a>  ) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-16"><a href="#cb1-16"></a><span class="st">  </span><span class="kw">left_join</span>(poblacion_adulto_mayor_comunas)</span>
-<span id="cb1-17"><a href="#cb1-17"></a></span>
-<span id="cb1-18"><a href="#cb1-18"></a><span class="co"># estos colores vienen del paquete colRoz</span></span>
-<span id="cb1-19"><a href="#cb1-19"></a><span class="co"># https://github.com/jacintak/colRoz</span></span>
-<span id="cb1-20"><a href="#cb1-20"></a>paleta &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"#DCA761"</span>, <span class="st">"#CFB567"</span>, <span class="st">"#BFBC71"</span>, <span class="st">"#9EA887"</span>, <span class="st">"#819897"</span>)</span>
-<span id="cb1-21"><a href="#cb1-21"></a></span>
-<span id="cb1-22"><a href="#cb1-22"></a><span class="kw">ggplot</span>(comunas_los_rios) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb1-23"><a href="#cb1-23"></a><span class="st">  </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> pob_adulto_mayor)) <span class="op">+</span></span>
-<span id="cb1-24"><a href="#cb1-24"></a><span class="st">  </span><span class="kw">geom_sf_label</span>(<span class="kw">aes</span>(<span class="dt">label =</span> nombre_comuna)) <span class="op">+</span></span>
-<span id="cb1-25"><a href="#cb1-25"></a><span class="st">  </span><span class="kw">scale_fill_gradientn</span>(<span class="dt">colours =</span> <span class="kw"><a href="https://rdrr.io/r/base/rev.html">rev</a></span>(paleta), <span class="dt">name =</span> <span class="st">"Poblacion</span><span class="ch">\n</span><span class="st">adulto mayor"</span>) <span class="op">+</span></span>
-<span id="cb1-26"><a href="#cb1-26"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">"Poblacion de 65 anios y mas en la Region de los Rios"</span>) <span class="op">+</span></span>
-<span id="cb1-27"><a href="#cb1-27"></a><span class="st">  </span><span class="kw">theme_minimal</span>(<span class="dt">base_size =</span> <span class="dv">13</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(chilemapas)</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(dplyr)</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(ggplot2)</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">poblacion_adulto_mayor_comunas &lt;-<span class="st"> </span>censo_<span class="dv">2017</span>_comunas <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/integer.html">as.integer</a></span>(edad) <span class="op">&gt;=</span><span class="st"> </span><span class="dv">14</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(codigo_comuna) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb1-8" data-line-number="8"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span>(<span class="dt">pob_adulto_mayor =</span> <span class="kw"><a href="https://rdrr.io/r/base/sum.html">sum</a></span>(poblacion))</a>
+<a class="sourceLine" id="cb1-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb1-10" data-line-number="10">comunas_los_rios &lt;-<span class="st"> </span>mapa_comunas <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb1-11" data-line-number="11"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(codigo_region <span class="op">==</span><span class="st"> </span><span class="dv">14</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb1-12" data-line-number="12"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/join.html">left_join</a></span>(</a>
+<a class="sourceLine" id="cb1-13" data-line-number="13">    codigos_territoriales <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb1-14" data-line-number="14"><span class="st">      </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span>(<span class="kw"><a href="https://dplyr.tidyverse.org/reference/reexports.html">matches</a></span>(<span class="st">"comuna"</span>))</a>
+<a class="sourceLine" id="cb1-15" data-line-number="15">  ) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb1-16" data-line-number="16"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/join.html">left_join</a></span>(poblacion_adulto_mayor_comunas)</a>
+<a class="sourceLine" id="cb1-17" data-line-number="17"></a>
+<a class="sourceLine" id="cb1-18" data-line-number="18"><span class="co"># estos colores vienen del paquete colRoz</span></a>
+<a class="sourceLine" id="cb1-19" data-line-number="19"><span class="co"># https://github.com/jacintak/colRoz</span></a>
+<a class="sourceLine" id="cb1-20" data-line-number="20">paleta &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"#DCA761"</span>, <span class="st">"#CFB567"</span>, <span class="st">"#BFBC71"</span>, <span class="st">"#9EA887"</span>, <span class="st">"#819897"</span>)</a>
+<a class="sourceLine" id="cb1-21" data-line-number="21"></a>
+<a class="sourceLine" id="cb1-22" data-line-number="22"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(comunas_los_rios) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb1-23" data-line-number="23"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">fill =</span> pob_adulto_mayor)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb1-24" data-line-number="24"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf_label</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">label =</span> nombre_comuna)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb1-25" data-line-number="25"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradientn</a></span>(<span class="dt">colours =</span> <span class="kw"><a href="https://rdrr.io/r/base/rev.html">rev</a></span>(paleta), <span class="dt">name =</span> <span class="st">"Poblacion</span><span class="ch">\n</span><span class="st">adulto mayor"</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb1-26" data-line-number="26"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="dt">title =</span> <span class="st">"Poblacion de 65 anios y mas en la Region de los Rios"</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb1-27" data-line-number="27"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span>(<span class="dt">base_size =</span> <span class="dv">13</span>)</a></code></pre></div>
 <p><img src="basic-usage_files/figure-html/unnamed-chunk-1-1.png" width="960"></p>
 </div>
 <div id="graficar-provincias" class="section level2">
 <h2 class="hasAnchor">
 <a href="#graficar-provincias" class="anchor"></a>Graficar provincias</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>poblacion_adulto_mayor_provincias &lt;-<span class="st"> </span>censo_<span class="dv">2017</span>_comunas <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="st">  </span><span class="kw"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/integer.html">as.integer</a></span>(edad) <span class="op">&gt;=</span><span class="st"> </span><span class="dv">14</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="st">  </span><span class="kw">left_join</span>(codigos_territoriales) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="st">  </span><span class="kw">group_by</span>(codigo_provincia) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">pob_adulto_mayor =</span> <span class="kw"><a href="https://rdrr.io/r/base/sum.html">sum</a></span>(poblacion))</span>
-<span id="cb2-6"><a href="#cb2-6"></a><span class="co">#&gt; Joining, by = "codigo_comuna"</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a></span>
-<span id="cb2-8"><a href="#cb2-8"></a>provincias_los_rios &lt;-<span class="st"> </span>mapa_comunas <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb2-9"><a href="#cb2-9"></a><span class="st">  </span><span class="kw"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(codigo_region <span class="op">==</span><span class="st"> </span><span class="dv">14</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb2-10"><a href="#cb2-10"></a><span class="st">  </span><span class="kw"><a href="../reference/generar_provincias.html">generar_provincias</a></span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb2-11"><a href="#cb2-11"></a><span class="st">  </span><span class="kw">left_join</span>(</span>
-<span id="cb2-12"><a href="#cb2-12"></a>    codigos_territoriales <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb2-13"><a href="#cb2-13"></a><span class="st">      </span><span class="kw">select</span>(<span class="kw">matches</span>(<span class="st">"provincia"</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb2-14"><a href="#cb2-14"></a><span class="st">      </span><span class="kw">distinct</span>()</span>
-<span id="cb2-15"><a href="#cb2-15"></a>  ) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb2-16"><a href="#cb2-16"></a><span class="st">  </span><span class="kw">left_join</span>(poblacion_adulto_mayor_provincias)</span>
-<span id="cb2-17"><a href="#cb2-17"></a><span class="co">#&gt; Joining, by = "codigo_provincia"Joining, by = "codigo_provincia"Joining, by =</span></span>
-<span id="cb2-18"><a href="#cb2-18"></a><span class="co">#&gt; "codigo_provincia"</span></span>
-<span id="cb2-19"><a href="#cb2-19"></a></span>
-<span id="cb2-20"><a href="#cb2-20"></a><span class="kw">ggplot</span>(provincias_los_rios) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb2-21"><a href="#cb2-21"></a><span class="st">  </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> pob_adulto_mayor)) <span class="op">+</span></span>
-<span id="cb2-22"><a href="#cb2-22"></a><span class="st">  </span><span class="kw">geom_sf_label</span>(<span class="kw">aes</span>(<span class="dt">label =</span> nombre_provincia)) <span class="op">+</span></span>
-<span id="cb2-23"><a href="#cb2-23"></a><span class="st">  </span><span class="kw">scale_fill_gradientn</span>(<span class="dt">colours =</span> <span class="kw"><a href="https://rdrr.io/r/base/rev.html">rev</a></span>(paleta), <span class="dt">name =</span> <span class="st">"Poblacion</span><span class="ch">\n</span><span class="st">adulto mayor"</span>) <span class="op">+</span></span>
-<span id="cb2-24"><a href="#cb2-24"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">"Poblacion de 65 anios y mas en la Region de los Rios"</span>) <span class="op">+</span></span>
-<span id="cb2-25"><a href="#cb2-25"></a><span class="st">  </span><span class="kw">theme_minimal</span>(<span class="dt">base_size =</span> <span class="dv">13</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">poblacion_adulto_mayor_provincias &lt;-<span class="st"> </span>censo_<span class="dv">2017</span>_comunas <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/integer.html">as.integer</a></span>(edad) <span class="op">&gt;=</span><span class="st"> </span><span class="dv">14</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/join.html">left_join</a></span>(codigos_territoriales) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(codigo_provincia) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span>(<span class="dt">pob_adulto_mayor =</span> <span class="kw"><a href="https://rdrr.io/r/base/sum.html">sum</a></span>(poblacion))</a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#&gt; Joining, by = "codigo_comuna"</span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb2-8" data-line-number="8">provincias_los_rios &lt;-<span class="st"> </span>mapa_comunas <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(codigo_region <span class="op">==</span><span class="st"> </span><span class="dv">14</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-10" data-line-number="10"><span class="st">  </span><span class="kw"><a href="../reference/generar_provincias.html">generar_provincias</a></span>() <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/join.html">left_join</a></span>(</a>
+<a class="sourceLine" id="cb2-12" data-line-number="12">    codigos_territoriales <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-13" data-line-number="13"><span class="st">      </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span>(<span class="kw"><a href="https://dplyr.tidyverse.org/reference/reexports.html">matches</a></span>(<span class="st">"provincia"</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-14" data-line-number="14"><span class="st">      </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span>()</a>
+<a class="sourceLine" id="cb2-15" data-line-number="15">  ) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-16" data-line-number="16"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/join.html">left_join</a></span>(poblacion_adulto_mayor_provincias)</a>
+<a class="sourceLine" id="cb2-17" data-line-number="17"><span class="co">#&gt; Joining, by = "codigo_provincia"Joining, by = "codigo_provincia"Joining, by =</span></a>
+<a class="sourceLine" id="cb2-18" data-line-number="18"><span class="co">#&gt; "codigo_provincia"</span></a>
+<a class="sourceLine" id="cb2-19" data-line-number="19"></a>
+<a class="sourceLine" id="cb2-20" data-line-number="20"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(provincias_los_rios) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-21" data-line-number="21"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">fill =</span> pob_adulto_mayor)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb2-22" data-line-number="22"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf_label</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">label =</span> nombre_provincia)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb2-23" data-line-number="23"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradientn</a></span>(<span class="dt">colours =</span> <span class="kw"><a href="https://rdrr.io/r/base/rev.html">rev</a></span>(paleta), <span class="dt">name =</span> <span class="st">"Poblacion</span><span class="ch">\n</span><span class="st">adulto mayor"</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb2-24" data-line-number="24"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="dt">title =</span> <span class="st">"Poblacion de 65 anios y mas en la Region de los Rios"</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb2-25" data-line-number="25"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span>(<span class="dt">base_size =</span> <span class="dv">13</span>)</a></code></pre></div>
 <p><img src="basic-usage_files/figure-html/unnamed-chunk-2-1.png" width="960"></p>
 </div>
 <div id="graficar-regiones" class="section level2">
 <h2 class="hasAnchor">
 <a href="#graficar-regiones" class="anchor"></a>Graficar regiones</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>poblacion_adulto_mayor_regiones &lt;-<span class="st"> </span>censo_<span class="dv">2017</span>_comunas <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="st">  </span><span class="kw"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/integer.html">as.integer</a></span>(edad) <span class="op">&gt;=</span><span class="st"> </span><span class="dv">14</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="st">  </span><span class="kw">left_join</span>(codigos_territoriales) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="st">  </span><span class="kw">group_by</span>(codigo_region) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">pob_adulto_mayor =</span> <span class="kw"><a href="https://rdrr.io/r/base/sum.html">sum</a></span>(poblacion))</span>
-<span id="cb3-6"><a href="#cb3-6"></a><span class="co">#&gt; Joining, by = "codigo_comuna"</span></span>
-<span id="cb3-7"><a href="#cb3-7"></a></span>
-<span id="cb3-8"><a href="#cb3-8"></a>region_los_rios &lt;-<span class="st"> </span>mapa_comunas <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb3-9"><a href="#cb3-9"></a><span class="st">  </span><span class="kw"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(codigo_region <span class="op">==</span><span class="st"> </span><span class="dv">14</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb3-10"><a href="#cb3-10"></a><span class="st">  </span><span class="kw"><a href="../reference/generar_regiones.html">generar_regiones</a></span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb3-11"><a href="#cb3-11"></a><span class="st">  </span><span class="kw">left_join</span>(</span>
-<span id="cb3-12"><a href="#cb3-12"></a>    codigos_territoriales <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb3-13"><a href="#cb3-13"></a><span class="st">      </span><span class="kw">select</span>(<span class="kw">matches</span>(<span class="st">"region"</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb3-14"><a href="#cb3-14"></a><span class="st">      </span><span class="kw">distinct</span>()</span>
-<span id="cb3-15"><a href="#cb3-15"></a>  ) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb3-16"><a href="#cb3-16"></a><span class="st">  </span><span class="kw">left_join</span>(poblacion_adulto_mayor_regiones)</span>
-<span id="cb3-17"><a href="#cb3-17"></a><span class="co">#&gt; Joining, by = "codigo_region"Joining, by = "codigo_region"</span></span>
-<span id="cb3-18"><a href="#cb3-18"></a></span>
-<span id="cb3-19"><a href="#cb3-19"></a><span class="kw">ggplot</span>(region_los_rios) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb3-20"><a href="#cb3-20"></a><span class="st">  </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> pob_adulto_mayor)) <span class="op">+</span></span>
-<span id="cb3-21"><a href="#cb3-21"></a><span class="st">  </span><span class="kw">geom_sf_label</span>(<span class="kw">aes</span>(<span class="dt">label =</span> nombre_region)) <span class="op">+</span></span>
-<span id="cb3-22"><a href="#cb3-22"></a><span class="st">  </span><span class="kw">scale_fill_gradientn</span>(<span class="dt">colours =</span> <span class="kw"><a href="https://rdrr.io/r/base/rev.html">rev</a></span>(paleta), <span class="dt">name =</span> <span class="st">"Poblacion</span><span class="ch">\n</span><span class="st">adulto mayor"</span>) <span class="op">+</span></span>
-<span id="cb3-23"><a href="#cb3-23"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">"Poblacion de 65 anios y mas en la Region de los Rios"</span>) <span class="op">+</span></span>
-<span id="cb3-24"><a href="#cb3-24"></a><span class="st">  </span><span class="kw">theme_minimal</span>(<span class="dt">base_size =</span> <span class="dv">13</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">poblacion_adulto_mayor_regiones &lt;-<span class="st"> </span>censo_<span class="dv">2017</span>_comunas <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/integer.html">as.integer</a></span>(edad) <span class="op">&gt;=</span><span class="st"> </span><span class="dv">14</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/join.html">left_join</a></span>(codigos_territoriales) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(codigo_region) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span>(<span class="dt">pob_adulto_mayor =</span> <span class="kw"><a href="https://rdrr.io/r/base/sum.html">sum</a></span>(poblacion))</a>
+<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">#&gt; Joining, by = "codigo_comuna"</span></a>
+<a class="sourceLine" id="cb3-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb3-8" data-line-number="8">region_los_rios &lt;-<span class="st"> </span>mapa_comunas <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(codigo_region <span class="op">==</span><span class="st"> </span><span class="dv">14</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-10" data-line-number="10"><span class="st">  </span><span class="kw"><a href="../reference/generar_regiones.html">generar_regiones</a></span>() <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-11" data-line-number="11"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/join.html">left_join</a></span>(</a>
+<a class="sourceLine" id="cb3-12" data-line-number="12">    codigos_territoriales <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-13" data-line-number="13"><span class="st">      </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span>(<span class="kw"><a href="https://dplyr.tidyverse.org/reference/reexports.html">matches</a></span>(<span class="st">"region"</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-14" data-line-number="14"><span class="st">      </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span>()</a>
+<a class="sourceLine" id="cb3-15" data-line-number="15">  ) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-16" data-line-number="16"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/join.html">left_join</a></span>(poblacion_adulto_mayor_regiones)</a>
+<a class="sourceLine" id="cb3-17" data-line-number="17"><span class="co">#&gt; Joining, by = "codigo_region"Joining, by = "codigo_region"</span></a>
+<a class="sourceLine" id="cb3-18" data-line-number="18"></a>
+<a class="sourceLine" id="cb3-19" data-line-number="19"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(region_los_rios) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-20" data-line-number="20"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">fill =</span> pob_adulto_mayor)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb3-21" data-line-number="21"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf_label</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">label =</span> nombre_region)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb3-22" data-line-number="22"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradientn</a></span>(<span class="dt">colours =</span> <span class="kw"><a href="https://rdrr.io/r/base/rev.html">rev</a></span>(paleta), <span class="dt">name =</span> <span class="st">"Poblacion</span><span class="ch">\n</span><span class="st">adulto mayor"</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb3-23" data-line-number="23"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="dt">title =</span> <span class="st">"Poblacion de 65 anios y mas en la Region de los Rios"</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb3-24" data-line-number="24"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span>(<span class="dt">base_size =</span> <span class="dv">13</span>)</a></code></pre></div>
 <p><img src="basic-usage_files/figure-html/unnamed-chunk-3-1.png" width="960"></p>
 </div>
 <div id="graficar-zonas" class="section level2">
 <h2 class="hasAnchor">
 <a href="#graficar-zonas" class="anchor"></a>Graficar zonas</h2>
 <p>Se provee un dataset de todas las zonas urbanas (agregación de manzanas) contempladas en el CENSO.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>zonas_valdivia &lt;-<span class="st"> </span>mapa_zonas <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="st">  </span><span class="kw"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(codigo_comuna <span class="op">==</span><span class="st"> "14101"</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="st">  </span><span class="kw">inner_join</span>(</span>
-<span id="cb4-4"><a href="#cb4-4"></a>    censo_<span class="dv">2017</span>_zonas <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="st">      </span><span class="kw"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(</span>
-<span id="cb4-6"><a href="#cb4-6"></a>        <span class="kw"><a href="https://rdrr.io/r/base/substr.html">substr</a></span>(geocodigo, <span class="dv">1</span>, <span class="dv">2</span>) <span class="op">==</span><span class="st"> </span><span class="dv">14</span>,</span>
-<span id="cb4-7"><a href="#cb4-7"></a>        <span class="kw"><a href="https://rdrr.io/r/base/integer.html">as.integer</a></span>(edad) <span class="op">&gt;=</span><span class="st"> </span><span class="dv">4</span></span>
-<span id="cb4-8"><a href="#cb4-8"></a>      )</span>
-<span id="cb4-9"><a href="#cb4-9"></a>  )</span>
-<span id="cb4-10"><a href="#cb4-10"></a><span class="co">#&gt; Joining, by = "geocodigo"</span></span>
-<span id="cb4-11"><a href="#cb4-11"></a></span>
-<span id="cb4-12"><a href="#cb4-12"></a>paleta &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"#628ca5"</span>, <span class="st">"#dca761"</span>)</span>
-<span id="cb4-13"><a href="#cb4-13"></a></span>
-<span id="cb4-14"><a href="#cb4-14"></a><span class="kw">ggplot</span>() <span class="op">+</span><span class="st"> </span></span>
-<span id="cb4-15"><a href="#cb4-15"></a><span class="st">  </span><span class="kw">geom_sf</span>(<span class="dt">data =</span> zonas_valdivia, <span class="kw">aes</span>(<span class="dt">fill =</span> poblacion)) <span class="op">+</span></span>
-<span id="cb4-16"><a href="#cb4-16"></a><span class="st">  </span><span class="kw">geom_sf</span>(<span class="dt">data =</span> <span class="kw"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(comunas_los_rios, codigo_comuna <span class="op">==</span><span class="st"> "14101"</span>),</span>
-<span id="cb4-17"><a href="#cb4-17"></a>          <span class="dt">colour =</span> <span class="st">"#2A2B75"</span>, <span class="dt">fill =</span> <span class="ot">NA</span>) <span class="op">+</span></span>
-<span id="cb4-18"><a href="#cb4-18"></a><span class="st">  </span><span class="kw"><a href="https://rdrr.io/r/graphics/plot.window.html">ylim</a></span>(<span class="op">-</span><span class="fl">39.9</span>, <span class="fl">-39.78</span>) <span class="op">+</span></span>
-<span id="cb4-19"><a href="#cb4-19"></a><span class="st">  </span><span class="kw"><a href="https://rdrr.io/r/graphics/plot.window.html">xlim</a></span>(<span class="op">-</span><span class="fl">73.4</span>, <span class="fl">-73.17</span>) <span class="op">+</span></span>
-<span id="cb4-20"><a href="#cb4-20"></a><span class="st">  </span><span class="kw">scale_fill_gradientn</span>(<span class="dt">colors =</span> paleta, <span class="dt">name =</span> <span class="st">"Población") +</span></span>
-<span id="cb4-21"><a href="#cb4-21"></a><span class="st">  labs(title = "</span>Poblacion de <span class="dv">65</span> anios y mas en la Comuna de Valdivia<span class="st">") +</span></span>
-<span id="cb4-22"><a href="#cb4-22"></a><span class="st">  theme_minimal(base_size = 13)</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">zonas_valdivia &lt;-<span class="st"> </span>mapa_zonas <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(codigo_comuna <span class="op">==</span><span class="st"> "14101"</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/join.html">inner_join</a></span>(</a>
+<a class="sourceLine" id="cb4-4" data-line-number="4">    censo_<span class="dv">2017</span>_zonas <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="st">      </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(</a>
+<a class="sourceLine" id="cb4-6" data-line-number="6">        <span class="kw"><a href="https://rdrr.io/r/base/substr.html">substr</a></span>(geocodigo, <span class="dv">1</span>, <span class="dv">2</span>) <span class="op">==</span><span class="st"> </span><span class="dv">14</span>,</a>
+<a class="sourceLine" id="cb4-7" data-line-number="7">        <span class="kw"><a href="https://rdrr.io/r/base/integer.html">as.integer</a></span>(edad) <span class="op">&gt;=</span><span class="st"> </span><span class="dv">4</span></a>
+<a class="sourceLine" id="cb4-8" data-line-number="8">      )</a>
+<a class="sourceLine" id="cb4-9" data-line-number="9">  )</a>
+<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="co">#&gt; Joining, by = "geocodigo"</span></a>
+<a class="sourceLine" id="cb4-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb4-12" data-line-number="12">paleta &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"#628ca5"</span>, <span class="st">"#dca761"</span>)</a>
+<a class="sourceLine" id="cb4-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb4-14" data-line-number="14"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>() <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb4-15" data-line-number="15"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span>(<span class="dt">data =</span> zonas_valdivia, <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">fill =</span> poblacion)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb4-16" data-line-number="16"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span>(<span class="dt">data =</span> <span class="kw"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(comunas_los_rios, codigo_comuna <span class="op">==</span><span class="st"> "14101"</span>),</a>
+<a class="sourceLine" id="cb4-17" data-line-number="17">          <span class="dt">colour =</span> <span class="st">"#2A2B75"</span>, <span class="dt">fill =</span> <span class="ot">NA</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb4-18" data-line-number="18"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/lims.html">ylim</a></span>(<span class="op">-</span><span class="fl">39.9</span>, <span class="fl">-39.78</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb4-19" data-line-number="19"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/lims.html">xlim</a></span>(<span class="op">-</span><span class="fl">73.4</span>, <span class="fl">-73.17</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb4-20" data-line-number="20"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradientn</a></span>(<span class="dt">colors =</span> paleta, <span class="dt">name =</span> <span class="st">"Población") +</span></a>
+<a class="sourceLine" id="cb4-21" data-line-number="21"><span class="st">  labs(title = "</span>Poblacion de <span class="dv">65</span> anios y mas en la Comuna de Valdivia<span class="st">") +</span></a>
+<a class="sourceLine" id="cb4-22" data-line-number="22"><span class="st">  theme_minimal(base_size = 13)</span></a></code></pre></div>
 <p><img src="basic-usage_files/figure-html/unnamed-chunk-4-1.png" width="960"></p>
 </div>
 </div>
