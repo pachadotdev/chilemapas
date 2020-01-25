@@ -33,11 +33,11 @@ Description: Mapas terrestres con topologias simplificadas. Estos mapas no
   problema en diferentes plataformas.
   (Terrestrial maps with simplified toplogies. These maps lack geodesic
   precision, therefore DFL-83 1979 of the Republic of Chile applies and are
-  consider to have no legal validity.
+  considered to have no legal validity.
   Antartic territories are excluded and under no event these maps mean
   there is a cession or occupation of sovereign territories against International
   Laws from Chile. This package was intentionally documented in asciified
-  spanish to make it work with problem on different platforms.)
+  spanish to make it work without problem on different platforms.)
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
