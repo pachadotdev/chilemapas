@@ -41,7 +41,7 @@ jobs:
         if: runner.os == 'Linux'
         run: |
           sudo apt-get update -y
-          sudo apt-get -y install default-jdk libv8-dev libgdal-dev libgeos-dev
+          sudo apt-get -y install default-jdk libv8-dev libgdal-dev libgeos-dev libjq-dev
 
       - name: Cache R packages
         uses: actions/cache@v1
