@@ -3,7 +3,7 @@
 #' del mapa comunal para no recargar el volumen de datos del paquete.
 #' @param mapa mapa a agregar, por defecto es todo el mapa nacional
 #' @importFrom rmapshaper ms_dissolve
-#' @importFrom dplyr left_join select distinct mutate rename arrange
+#' @importFrom dplyr as_tibble left_join select distinct mutate rename arrange
 #' @importFrom magrittr %>%
 #' @importFrom stringr str_sub
 #' @importFrom rlang sym
@@ -13,10 +13,12 @@
 #' @export
 generar_circunscripciones <- function(mapa = chilemapas::mapa_comunas) {
   mapa %>%
-    left_join(
-      chilemapas::divisiones_electorales %>% select(!!sym("codigo_comuna"), !!sym("codigo_circunscripcion"))
+    merge(
+      chilemapas::divisiones_electorales %>% select(!!sym("codigo_comuna"), !!sym("codigo_circunscripcion")),
+      all.x = TRUE
     ) %>%
     ms_dissolve(field = "codigo_circunscripcion") %>%
+    as_tibble() %>%
     left_join(
       chilemapas::divisiones_electorales %>%
         select(!!sym("codigo_comuna"), !!sym("codigo_circunscripcion")) %>%
@@ -32,7 +34,7 @@ generar_circunscripciones <- function(mapa = chilemapas::mapa_comunas) {
 #' del mapa comunal para no recargar el volumen de datos del paquete.
 #' @param mapa mapa a agregar, por defecto es todo el mapa nacional
 #' @importFrom rmapshaper ms_dissolve
-#' @importFrom dplyr left_join select distinct mutate rename arrange
+#' @importFrom dplyr as_tibble left_join select distinct mutate rename arrange
 #' @importFrom magrittr %>%
 #' @importFrom stringr str_sub
 #' @importFrom rlang sym
@@ -42,10 +44,12 @@ generar_circunscripciones <- function(mapa = chilemapas::mapa_comunas) {
 #' @export
 generar_distritos <- function(mapa = chilemapas::mapa_comunas) {
   mapa %>%
-    left_join(
-      chilemapas::divisiones_electorales %>% select(!!sym("codigo_comuna"), !!sym("codigo_distrito"))
+    merge(
+      chilemapas::divisiones_electorales %>% select(!!sym("codigo_comuna"), !!sym("codigo_distrito")),
+      all.x = TRUE
     ) %>%
     ms_dissolve(field = "codigo_distrito") %>%
+    as_tibble() %>%
     left_join(
       chilemapas::divisiones_electorales %>%
         select(!!sym("codigo_comuna"), !!sym("codigo_distrito")) %>%

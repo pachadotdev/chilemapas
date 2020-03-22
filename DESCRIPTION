@@ -2,7 +2,7 @@ Package: chilemapas
 Type: Package
 Title: Mapas de las Divisiones Politicas y Administrativas de Chile
     (Maps of the Political and Administrative Divisions of Chile)
-Version: 0.1.4
+Version: 0.1.6
 Authors@R: c(
     person("Mauricio", "Vargas", role = c("aut", "cre"),
       email = "mvargas@dcc.uchile.cl"),
@@ -42,7 +42,7 @@ License: GPL-3
 Encoding: UTF-8
 LazyData: true
 VignetteBuilder: knitr
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.0
 Depends: R(>= 3.5.0), sf
 Imports: rmapshaper, dplyr, magrittr, stringr, rlang
 Suggests: 
