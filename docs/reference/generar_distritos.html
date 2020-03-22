@@ -70,7 +70,7 @@ del mapa comunal para no recargar el volumen de datos del paquete." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">chilemapas</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.6</span>
       </span>
     </div>
 
@@ -139,24 +139,20 @@ del mapa comunal para no recargar el volumen de datos del paquete.</p>
     <p>Un objeto de clase sf y data.frame.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>generar_distritos</span>()</div><div class='output co'>#&gt; <span class='message'>Joining, by = "codigo_comuna"</span></div><div class='output co'>#&gt; <span class='message'>Joining, by = "codigo_distrito"</span></div><div class='output co'>#&gt; Simple feature collection with 28 features and 2 fields
-#&gt; geometry type:  MULTIPOLYGON
-#&gt; dimension:      XY
-#&gt; bbox:           xmin: -109.4499 ymin: -56.52511 xmax: -66.41617 ymax: -17.49778
-#&gt; epsg (SRID):    NA
-#&gt; proj4string:    +proj=longlat +ellps=GRS80 +no_defs
-#&gt; First 10 features:
-#&gt;    codigo_distrito codigo_region                       geometry
-#&gt; 1               02            01 MULTIPOLYGON (((-68.86081 -...
-#&gt; 2               03            02 MULTIPOLYGON (((-68.98863 -...
-#&gt; 3               04            03 MULTIPOLYGON (((-70.68641 -...
-#&gt; 4               05            04 MULTIPOLYGON (((-71.66962 -...
-#&gt; 5               07            05 MULTIPOLYGON (((-71.67929 -...
-#&gt; 6               06            05 MULTIPOLYGON (((-71.01308 -...
-#&gt; 7               16            06 MULTIPOLYGON (((-71.1344 -3...
-#&gt; 8               15            06 MULTIPOLYGON (((-71.06711 -...
-#&gt; 9               18            07 MULTIPOLYGON (((-72.1032 -3...
-#&gt; 10              17            07 MULTIPOLYGON (((-72.10298 -...</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>generar_distritos</span>()</div><div class='output co'>#&gt; <span class='message'>Joining, by = "codigo_distrito"</span></div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 28 x 3</span><span>
+#&gt;    codigo_distrito                                        geometry codigo_region
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                                        </span><span style='color: #555555;font-style: italic;'>&lt;MULTIPOLYGON [°]&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        
+#&gt; </span><span style='color: #555555;'> 1</span><span> 02              (((-69.93023 -21.4246, -69.93211 -21.42485, -6… 01           
+#&gt; </span><span style='color: #555555;'> 2</span><span> 03              (((-70.60654 -23.43054, -70.60175 -23.43515, -… 02           
+#&gt; </span><span style='color: #555555;'> 3</span><span> 04              (((-68.36698 -26.79685, -68.36379 -26.80107, -… 03           
+#&gt; </span><span style='color: #555555;'> 4</span><span> 05              (((-71.28791 -29.9416, -71.28132 -29.93136, -7… 04           
+#&gt; </span><span style='color: #555555;'> 5</span><span> 07              (((-71.49302 -33.10398, -71.48609 -33.10908, -… 05           
+#&gt; </span><span style='color: #555555;'> 6</span><span> 06              (((-71.49074 -32.77034, -71.48661 -32.76287, -… 05           
+#&gt; </span><span style='color: #555555;'> 7</span><span> 15              (((-70.91453 -34.14454, -70.91686 -34.14091, -… 06           
+#&gt; </span><span style='color: #555555;'> 8</span><span> 16              (((-71.07191 -34.18389, -71.07153 -34.18925, -… 06           
+#&gt; </span><span style='color: #555555;'> 9</span><span> 17              (((-72.10298 -35.44028, -72.10745 -35.43902, -… 07           
+#&gt; </span><span style='color: #555555;'>10</span><span> 18              (((-72.1032 -36.12348, -72.10308 -36.13219, -7… 07           
+#&gt; </span><span style='color: #555555;'># … with 18 more rows</span><span></div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
