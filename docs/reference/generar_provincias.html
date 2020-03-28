@@ -70,7 +70,7 @@ del mapa comunal para no recargar el volumen de datos del paquete." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">chilemapas</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2</span>
       </span>
     </div>
 
@@ -139,20 +139,20 @@ del mapa comunal para no recargar el volumen de datos del paquete.</p>
     <p>Un objeto de clase sf y data.frame.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>generar_provincias</span>()</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 346 x 3</span><span>
-#&gt;    codigo_provincia                                       geometry codigo_region
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                                        </span><span style='color: #555555;font-style: italic;'>&lt;MULTIPOLYGON [°]&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        
-#&gt; </span><span style='color: #555555;'> 1</span><span> 014              (((-68.86081 -21.28512, -68.92172 -21.30035, … 01           
-#&gt; </span><span style='color: #555555;'> 2</span><span> 014              (((-68.86081 -21.28512, -68.92172 -21.30035, … 01           
-#&gt; </span><span style='color: #555555;'> 3</span><span> 014              (((-68.86081 -21.28512, -68.92172 -21.30035, … 01           
-#&gt; </span><span style='color: #555555;'> 4</span><span> 014              (((-68.86081 -21.28512, -68.92172 -21.30035, … 01           
-#&gt; </span><span style='color: #555555;'> 5</span><span> 014              (((-68.86081 -21.28512, -68.92172 -21.30035, … 01           
-#&gt; </span><span style='color: #555555;'> 6</span><span> 011              (((-70.09894 -20.08504, -70.01515 -20.07019, … 01           
-#&gt; </span><span style='color: #555555;'> 7</span><span> 011              (((-70.09894 -20.08504, -70.01515 -20.07019, … 01           
-#&gt; </span><span style='color: #555555;'> 8</span><span> 021              (((-68.98863 -25.38016, -68.98731 -25.38411, … 02           
-#&gt; </span><span style='color: #555555;'> 9</span><span> 021              (((-68.98863 -25.38016, -68.98731 -25.38411, … 02           
-#&gt; </span><span style='color: #555555;'>10</span><span> 021              (((-68.98863 -25.38016, -68.98731 -25.38411, … 02           
-#&gt; </span><span style='color: #555555;'># … with 336 more rows</span><span></div></span></pre>
+    <pre class="examples"><div class='input'><span class='fu'>generar_provincias</span>()</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 56 x 3</span><span>
+#&gt;    codigo_provincia codigo_region                                       geometry
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                                     </span><span style='color: #555555;font-style: italic;'>&lt;MULTIPOLYGON [°]&gt;</span><span>
+#&gt; </span><span style='color: #555555;'> 1</span><span> 014              01            (((-68.86081 -21.28512, -68.92172 -21.30035, …
+#&gt; </span><span style='color: #555555;'> 2</span><span> 011              01            (((-70.09894 -20.08504, -70.01515 -20.07019, …
+#&gt; </span><span style='color: #555555;'> 3</span><span> 021              02            (((-68.98863 -25.38016, -68.98731 -25.38411, …
+#&gt; </span><span style='color: #555555;'> 4</span><span> 022              02            (((-68.66131 -23.1077, -68.66418 -23.1052, -6…
+#&gt; </span><span style='color: #555555;'> 5</span><span> 023              02            (((-69.19173 -22.57654, -69.25181 -22.63043, …
+#&gt; </span><span style='color: #555555;'> 6</span><span> 032              03            (((-70.68641 -26.15053, -70.68303 -26.15132, …
+#&gt; </span><span style='color: #555555;'> 7</span><span> 031              03            (((-68.36698 -26.79685, -68.36379 -26.80107, …
+#&gt; </span><span style='color: #555555;'> 8</span><span> 033              03            (((-70.07472 -28.15016, -70.07486 -28.15708, …
+#&gt; </span><span style='color: #555555;'> 9</span><span> 043              04            (((-70.59578 -31.27989, -70.60591 -31.28923, …
+#&gt; </span><span style='color: #555555;'>10</span><span> 041              04            (((-70.93196 -30.23447, -70.91899 -30.25968, …
+#&gt; </span><span style='color: #555555;'># … with 46 more rows</span><span></div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

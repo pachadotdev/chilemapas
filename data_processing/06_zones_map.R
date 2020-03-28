@@ -100,6 +100,7 @@ if (!file.exists(zones_map_file)) {
 
   mapa_zonas <- rmapshaper::ms_simplify(mapa_zonas, keep = 0.3)
 
+  mapa_zonas <- dplyr::as_tibble(mapa_zonas)
   save(mapa_zonas, file = zones_map_file, compress = "xz")
 } else{
   load(zones_map_file)

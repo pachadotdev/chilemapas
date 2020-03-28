@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">chilemapas</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2</span>
       </span>
     </div>
 
@@ -75,7 +75,7 @@
       <h1>Uso basico del paquete chilemapas</h1>
                         <h4 class="author">Mauricio Vargas S.</h4>
             
-            <h4 class="date">2020-03-22</h4>
+            <h4 class="date">2020-03-28</h4>
       
       
       <div class="hidden name"><code>basic-usage.Rmd</code></div>
@@ -118,8 +118,8 @@
 <a class="sourceLine" id="cb1-20" data-line-number="20">paleta &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"#DCA761"</span>, <span class="st">"#CFB567"</span>, <span class="st">"#BFBC71"</span>, <span class="st">"#9EA887"</span>, <span class="st">"#819897"</span>)</a>
 <a class="sourceLine" id="cb1-21" data-line-number="21"></a>
 <a class="sourceLine" id="cb1-22" data-line-number="22"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(comunas_los_rios) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb1-23" data-line-number="23"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">fill =</span> pob_adulto_mayor)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb1-24" data-line-number="24"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf_label</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">label =</span> nombre_comuna)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb1-23" data-line-number="23"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">fill =</span> pob_adulto_mayor, <span class="dt">geometry =</span> geometry)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb1-24" data-line-number="24"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf_label</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">label =</span> nombre_comuna, <span class="dt">geometry =</span> geometry)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb1-25" data-line-number="25"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradientn</a></span>(<span class="dt">colours =</span> <span class="kw"><a href="https://rdrr.io/r/base/rev.html">rev</a></span>(paleta), <span class="dt">name =</span> <span class="st">"Poblacion</span><span class="ch">\n</span><span class="st">adulto mayor"</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb1-26" data-line-number="26"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="dt">title =</span> <span class="st">"Poblacion de 65 anios y mas en la Region de los Rios"</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb1-27" data-line-number="27"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span>(<span class="dt">base_size =</span> <span class="dv">13</span>)</a></code></pre></div>
@@ -205,7 +205,7 @@
 <a class="sourceLine" id="cb4-14" data-line-number="14"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>() <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb4-15" data-line-number="15"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span>(<span class="dt">data =</span> zonas_valdivia, <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">fill =</span> poblacion, <span class="dt">geometry =</span> geometry)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb4-16" data-line-number="16"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span>(<span class="dt">data =</span> <span class="kw"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(comunas_los_rios, codigo_comuna <span class="op">==</span><span class="st"> "14101"</span>),</a>
-<a class="sourceLine" id="cb4-17" data-line-number="17">          <span class="dt">colour =</span> <span class="st">"#2A2B75"</span>, <span class="dt">fill =</span> <span class="ot">NA</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb4-17" data-line-number="17">          <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">geometry =</span> geometry), <span class="dt">colour =</span> <span class="st">"#2A2B75"</span>, <span class="dt">fill =</span> <span class="ot">NA</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb4-18" data-line-number="18"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/lims.html">ylim</a></span>(<span class="op">-</span><span class="fl">39.9</span>, <span class="fl">-39.78</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb4-19" data-line-number="19"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/lims.html">xlim</a></span>(<span class="op">-</span><span class="fl">73.4</span>, <span class="fl">-73.17</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb4-20" data-line-number="20"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradientn</a></span>(<span class="dt">colors =</span> paleta, <span class="dt">name =</span> <span class="st">"Población") +</span></a>

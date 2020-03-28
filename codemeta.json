@@ -10,14 +10,14 @@
   "codeRepository": "https://pachamaltese.github.io/chilemapas/",
   "issueTracker": "https://github.com/pachamaltese/chilemapas/issues",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "0.1.4",
+  "version": "0.2",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
-    "version": "3.6.2",
+    "version": "3.6.3",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 3.6.2 (2019-12-12)",
+  "runtimePlatform": "R version 3.6.3 (2020-02-29)",
   "author": [
     {
       "@type": "Person",
@@ -206,7 +206,7 @@
     }
   ],
   "readme": "https://github.com/pachamaltese/chilemapas/blob/master/README.md",
-  "fileSize": "1779.876KB",
+  "fileSize": "1789.397KB",
   "contIntegration": "https://codecov.io/gh/pachamaltese/chilemapas?branch=master",
   "developmentStatus": "https://www.repostatus.org/#active",
   "provider": {

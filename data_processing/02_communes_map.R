@@ -153,6 +153,7 @@ if (!file.exists(communes_map_file)) {
 
   mapa_comunas <- rmapshaper::ms_simplify(mapa_comunas, keep = 0.3)
 
+  mapa_comunas <- dplyr::as_tibble(mapa_comunas)
   save(mapa_comunas, file = communes_map_file, compress = "xz")
 } else{
   load(communes_map_file)
