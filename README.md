@@ -23,7 +23,16 @@ en castellano asciificado para que funcione sin problema en diferentes plataform
 La documentacion esta disponible en https://pacha.dev/chilemapas. Se incluyen ejemplos
 de uso de las funciones del paquete chilemapas y como se integra con otros paquetes de R.
 
-# Instalacion desde RStudio
+# Instalacion
+
+Si usas Windows, los binarios ya estan listos y no hace instalar software previamente.
+
+En Ubuntu necesitas ejectutar lo siguiente:
+```
+sudo apt install libv8-dev libudunits2-dev libprotobuf-dev protobuf-compiler libgeos-dev libgdal-dev
+```
+
+Si lo haz instalado en Fedora, OS X u otro y tienes instrucciones para una instalación directa, por favor dejame un issue o pull request.
 
 Version estable
 ```
