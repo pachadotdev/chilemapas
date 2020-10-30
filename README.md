@@ -34,14 +34,15 @@ sudo apt install libv8-dev libudunits2-dev libprotobuf-dev protobuf-compiler lib
 
 Si lo haz instalado en Fedora, OS X u otro y tienes instrucciones para una instalación directa, por favor dejame un issue o pull request.
 
-Version estable
+## Version estable
 ```
 install.packages("chilemapas")
 ```
 
-Version de desarrollo
+## Version de desarrollo
 ```
-source("https://install-github.me/pachamaltese/chilemapas")
+# install.packages("remotes")
+remotes::install_github("pachamaltese/chilemapas")
 ```
 
 # Mapas en geojson y topojson
@@ -61,7 +62,6 @@ mapa de servicios de salud recopilando datos de diversas fuentes.
 * Mapa politico: Reuni datos para generar el mapa de distritos y circunscripciones
 con los diputados y senadores que les asigna la ley.
 
-# Pendientes
+# Contribuciones
 
-Aun esta pendiente el mapa de zonas hasta tener respuesta sobre los cambios a
-las geozonas.
+Todos los aportes son bienvenidos. La única condición es respetar el [Codigo de Conducta](https://github.com/pachamaltese/censo2017/blob/main/CODE_OF_CONDUCT.md).
