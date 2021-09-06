@@ -73,7 +73,7 @@ administrativas (provincia y region) a las que pertenecen." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">chilemapas</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
       </span>
     </div>
 
@@ -81,7 +81,7 @@ administrativas (provincia y region) a las que pertenecen." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -91,11 +91,14 @@ administrativas (provincia y region) a las que pertenecen." />
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/pachamaltese/chilemapas/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -141,20 +144,20 @@ administrativas (provincia y region) a las que pertenecen.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='va'>mapa_comunas</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 345 x 4</span><span>
+</div><div class='output co'>#&gt; <span class='message'>old-style crs object detected; please recreate object with a recent sf::st_crs()</span></div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 345 × 4</span>
 #&gt;    codigo_comuna codigo_provincia codigo_region                         geometry
-#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>         </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                       </span><span style='color: #949494;font-style: italic;'>&lt;MULTIPOLYGON [°]&gt;</span><span>
-#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> 01401         014              01            (((-68.86081 -21.28512, -68.921…
-#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> 01403         014              01            (((-68.65113 -19.77188, -68.811…
-#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> 01405         014              01            (((-68.65113 -19.77188, -68.635…
-#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> 01402         014              01            (((-69.31789 -19.13651, -69.271…
-#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> 01404         014              01            (((-69.39615 -19.06125, -69.400…
-#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> 01107         011              01            (((-70.1095 -20.35131, -70.1243…
-#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> 01101         011              01            (((-70.09894 -20.08504, -70.102…
-#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> 02104         021              02            (((-68.98863 -25.38016, -68.987…
-#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> 02101         021              02            (((-70.60654 -23.43054, -70.601…
-#&gt; </span><span style='color: #BCBCBC;'>10</span><span> 02201         022              02            (((-67.94302 -22.38175, -67.955…
-#&gt; </span><span style='color: #949494;'># … with 335 more rows</span><span></div></span></pre>
+#&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>         <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>            <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>                       <span style='color: #949494; font-style: italic;'>&lt;MULTIPOLYGON [°]&gt;</span>
+#&gt; <span style='color: #BCBCBC;'> 1</span> 01401         014              01            (((-68.86081 -21.28512, -68.921…
+#&gt; <span style='color: #BCBCBC;'> 2</span> 01403         014              01            (((-68.65113 -19.77188, -68.811…
+#&gt; <span style='color: #BCBCBC;'> 3</span> 01405         014              01            (((-68.65113 -19.77188, -68.635…
+#&gt; <span style='color: #BCBCBC;'> 4</span> 01402         014              01            (((-69.31789 -19.13651, -69.271…
+#&gt; <span style='color: #BCBCBC;'> 5</span> 01404         014              01            (((-69.39615 -19.06125, -69.400…
+#&gt; <span style='color: #BCBCBC;'> 6</span> 01107         011              01            (((-70.1095 -20.35131, -70.1243…
+#&gt; <span style='color: #BCBCBC;'> 7</span> 01101         011              01            (((-70.09894 -20.08504, -70.102…
+#&gt; <span style='color: #BCBCBC;'> 8</span> 02104         021              02            (((-68.98863 -25.38016, -68.987…
+#&gt; <span style='color: #BCBCBC;'> 9</span> 02101         021              02            (((-70.60654 -23.43054, -70.601…
+#&gt; <span style='color: #BCBCBC;'>10</span> 02201         022              02            (((-67.94302 -22.38175, -67.955…
+#&gt; <span style='color: #949494;'># … with 335 more rows</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

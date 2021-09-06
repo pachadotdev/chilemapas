@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Mapa de Chile a nivel de circunscripciones — generar_circunscripciones • chilemapas</title>
+<title>Changelog • chilemapas</title>
 
 
 <!-- jquery -->
@@ -39,9 +39,7 @@
 
 
 
-<meta property="og:title" content="Mapa de Chile a nivel de circunscripciones — generar_circunscripciones" />
-<meta property="og:description" content="Este mapa es calculado a partir
-del mapa comunal para no recargar el volumen de datos del paquete." />
+<meta property="og:title" content="Changelog" />
 
 
 
@@ -60,7 +58,7 @@ del mapa comunal para no recargar el volumen de datos del paquete." />
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-topic">
+    <div class="container template-news">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -115,57 +113,27 @@ del mapa comunal para no recargar el volumen de datos del paquete." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Mapa de Chile a nivel de circunscripciones</h1>
-    <small class="dont-index">Source: <a href='https://github.com/pachamaltese/chilemapas/blob/master/R/political-maps.R'><code>R/political-maps.R</code></a></small>
-    <div class="hidden name"><code>generar_circunscripciones.Rd</code></div>
+      <h1 data-toc-skip>Changelog <small></small></h1>
+      <small>Source: <a href='https://github.com/pachamaltese/chilemapas/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div class="ref-description">
-    <p>Este mapa es calculado a partir
-del mapa comunal para no recargar el volumen de datos del paquete.</p>
-    </div>
-
-    <pre class="usage"><span class='fu'>generar_circunscripciones</span><span class='op'>(</span>mapa <span class='op'>=</span> <span class='fu'>chilemapas</span><span class='fu'>::</span><span class='va'><a href='mapa_comunas.html'>mapa_comunas</a></span><span class='op'>)</span></pre>
-
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>mapa</th>
-      <td><p>mapa a agregar, por defecto es todo el mapa nacional</p></td>
-    </tr>
-    </table>
-
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>Un objeto de clase sf y data.frame.</p>
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>generar_circunscripciones</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>old-style crs object detected; please recreate object with a recent sf::st_crs()</span></div><div class='output co'>#&gt; <span class='message'>Joining, by = "codigo_circunscripcion"</span></div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 15 × 3</span>
-#&gt;    codigo_circunscripcion codigo_region                                 geometry
-#&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>                  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>                               <span style='color: #949494; font-style: italic;'>&lt;MULTIPOLYGON [°]&gt;</span>
-#&gt; <span style='color: #BCBCBC;'> 1</span> 02                     01            (((-69.93023 -21.4246, -69.93211 -21.42…
-#&gt; <span style='color: #BCBCBC;'> 2</span> 03                     02            (((-70.60654 -23.43054, -70.60175 -23.4…
-#&gt; <span style='color: #BCBCBC;'> 3</span> 04                     03            (((-68.36698 -26.79685, -68.36379 -26.8…
-#&gt; <span style='color: #BCBCBC;'> 4</span> 05                     04            (((-71.28791 -29.9416, -71.28132 -29.93…
-#&gt; <span style='color: #BCBCBC;'> 5</span> 06                     05            (((-71.70008 -33.1555, -71.71085 -33.14…
-#&gt; <span style='color: #BCBCBC;'> 6</span> 08                     06            (((-70.91453 -34.14454, -70.91686 -34.1…
-#&gt; <span style='color: #BCBCBC;'> 7</span> 09                     07            (((-72.61881 -35.56136, -72.61272 -35.5…
-#&gt; <span style='color: #BCBCBC;'> 8</span> 11                     09            (((-73.35579 -38.73982, -73.35826 -38.7…
-#&gt; <span style='color: #BCBCBC;'> 9</span> 13                     10            (((-72.99 -41.55301, -72.98086 -41.5531…
-#&gt; <span style='color: #BCBCBC;'>10</span> 14                     11            (((-72.06159 -44.83968, -72.06635 -44.8…
-#&gt; <span style='color: #BCBCBC;'>11</span> 15                     12            (((-72.1423 -54.4747, -72.1399 -54.4772…
-#&gt; <span style='color: #BCBCBC;'>12</span> 07                     13            (((-70.37256 -33.10578, -70.36695 -33.1…
-#&gt; <span style='color: #BCBCBC;'>13</span> 12                     14            (((-73.2668 -39.88605, -73.26215 -39.88…
-#&gt; <span style='color: #BCBCBC;'>14</span> 01                     15            (((-70.35079 -18.8362, -70.34977 -18.83…
-#&gt; <span style='color: #BCBCBC;'>15</span> 10                     16            (((-73.05136 -36.85569, -73.06061 -36.8…</div></pre>
+    <div id="chilemapas-021" class="section level1">
+<h1 class="page-header" data-toc-text="0.2.1">
+<a href="#chilemapas-021" class="anchor"></a>chilemapas 0.2.1<small> Unreleased </small>
+</h1>
+<ul>
+<li>Added a <code>NEWS.md</code> file to track changes to the package.</li>
+<li>Added a dataset to match 15 and 16 regions codes for Niuble.</li>
+</ul>
+</div>
   </div>
+
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
     </nav>
   </div>
+
 </div>
 
 

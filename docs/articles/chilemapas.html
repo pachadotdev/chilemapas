@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">chilemapas</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
       </span>
     </div>
 
@@ -39,7 +39,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -49,11 +49,14 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/pachamaltese/chilemapas/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -67,13 +70,13 @@
 
       
 
-      </header><script src="chilemapas_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><script src="chilemapas_files/header-attrs-2.7/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Uso basico del paquete chilemapas</h1>
                         <h4 class="author">Mauricio Vargas S.</h4>
             
-            <h4 class="date">2020-10-30</h4>
+            <h4 class="date">2021-09-06</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/pachamaltese/chilemapas/blob/master/vignettes/chilemapas.Rmd"><code>vignettes/chilemapas.Rmd</code></a></small>
       <div class="hidden name"><code>chilemapas.Rmd</code></div>
@@ -94,10 +97,10 @@
 <div id="graficar-comunas" class="section level2">
 <h2 class="hasAnchor">
 <a href="#graficar-comunas" class="anchor"></a>Graficar comunas</h2>
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://pachamaltese.github.io/chilemapas/">chilemapas</a></span><span class="op">)</span>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://pachamaltese.github.io/chilemapas/">chilemapas</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 
 <span class="va">poblacion_adulto_mayor_comunas</span> <span class="op">&lt;-</span> <span class="va">censo_2017_comunas</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/integer.html">as.integer</a></span><span class="op">(</span><span class="va">edad</span><span class="op">)</span> <span class="op">&gt;=</span> <span class="fl">14</span><span class="op">)</span> <span class="op">%&gt;%</span> 
@@ -121,20 +124,19 @@
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf_label</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="va">nombre_comuna</span>, geometry <span class="op">=</span> <span class="va">geometry</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradientn</a></span><span class="op">(</span>colours <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rev.html">rev</a></span><span class="op">(</span><span class="va">paleta</span><span class="op">)</span>, name <span class="op">=</span> <span class="st">"Poblacion\nadulto mayor"</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Poblacion de 65 anios y mas en la Region de los Rios"</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">13</span><span class="op">)</span></pre></div>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">13</span><span class="op">)</span></code></pre></div>
 <p><img src="chilemapas_files/figure-html/unnamed-chunk-1-1.png" width="960"></p>
 </div>
 <div id="graficar-provincias" class="section level2">
 <h2 class="hasAnchor">
 <a href="#graficar-provincias" class="anchor"></a>Graficar provincias</h2>
-<div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="va">poblacion_adulto_mayor_provincias</span> <span class="op">&lt;-</span> <span class="va">censo_2017_comunas</span> <span class="op">%&gt;%</span> 
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">poblacion_adulto_mayor_provincias</span> <span class="op">&lt;-</span> <span class="va">censo_2017_comunas</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/integer.html">as.integer</a></span><span class="op">(</span><span class="va">edad</span><span class="op">)</span> <span class="op">&gt;=</span> <span class="fl">14</span><span class="op">)</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">codigos_territoriales</span><span class="op">)</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">codigo_provincia</span><span class="op">)</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>pob_adulto_mayor <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">poblacion</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; Joining, by = "codigo_comuna"</span>
-<span class="co">#&gt; `summarise()` ungrouping output (override with `.groups` argument)</span>
 
 <span class="va">provincias_los_rios</span> <span class="op">&lt;-</span> <span class="va">mapa_comunas</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">codigo_region</span> <span class="op">==</span> <span class="fl">14</span><span class="op">)</span> <span class="op">%&gt;%</span> 
@@ -145,6 +147,7 @@
       <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="op">)</span>
   <span class="op">)</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">poblacion_adulto_mayor_provincias</span><span class="op">)</span>
+<span class="co">#&gt; old-style crs object detected; please recreate object with a recent sf::st_crs()</span>
 <span class="co">#&gt; Joining, by = "codigo_provincia"</span>
 <span class="co">#&gt; Joining, by = "codigo_provincia"</span>
 
@@ -153,20 +156,19 @@
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf_label</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="va">nombre_provincia</span>, geometry <span class="op">=</span> <span class="va">geometry</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradientn</a></span><span class="op">(</span>colours <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rev.html">rev</a></span><span class="op">(</span><span class="va">paleta</span><span class="op">)</span>, name <span class="op">=</span> <span class="st">"Poblacion\nadulto mayor"</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Poblacion de 65 anios y mas en la Region de los Rios"</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">13</span><span class="op">)</span></pre></div>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">13</span><span class="op">)</span></code></pre></div>
 <p><img src="chilemapas_files/figure-html/unnamed-chunk-2-1.png" width="960"></p>
 </div>
 <div id="graficar-regiones" class="section level2">
 <h2 class="hasAnchor">
 <a href="#graficar-regiones" class="anchor"></a>Graficar regiones</h2>
-<div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="va">poblacion_adulto_mayor_regiones</span> <span class="op">&lt;-</span> <span class="va">censo_2017_comunas</span> <span class="op">%&gt;%</span> 
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">poblacion_adulto_mayor_regiones</span> <span class="op">&lt;-</span> <span class="va">censo_2017_comunas</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/integer.html">as.integer</a></span><span class="op">(</span><span class="va">edad</span><span class="op">)</span> <span class="op">&gt;=</span> <span class="fl">14</span><span class="op">)</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">codigos_territoriales</span><span class="op">)</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">codigo_region</span><span class="op">)</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>pob_adulto_mayor <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">poblacion</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; Joining, by = "codigo_comuna"</span>
-<span class="co">#&gt; `summarise()` ungrouping output (override with `.groups` argument)</span>
 
 <span class="va">region_los_rios</span> <span class="op">&lt;-</span> <span class="va">mapa_comunas</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">codigo_region</span> <span class="op">==</span> <span class="fl">14</span><span class="op">)</span> <span class="op">%&gt;%</span> 
@@ -177,6 +179,7 @@
       <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="op">)</span>
   <span class="op">)</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">poblacion_adulto_mayor_regiones</span><span class="op">)</span>
+<span class="co">#&gt; old-style crs object detected; please recreate object with a recent sf::st_crs()</span>
 <span class="co">#&gt; Joining, by = "codigo_region"</span>
 <span class="co">#&gt; Joining, by = "codigo_region"</span>
 
@@ -185,15 +188,15 @@
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf_label</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="va">nombre_region</span>, geometry <span class="op">=</span> <span class="va">geometry</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradientn</a></span><span class="op">(</span>colours <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rev.html">rev</a></span><span class="op">(</span><span class="va">paleta</span><span class="op">)</span>, name <span class="op">=</span> <span class="st">"Poblacion\nadulto mayor"</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Poblacion de 65 anios y mas en la Region de los Rios"</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">13</span><span class="op">)</span></pre></div>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">13</span><span class="op">)</span></code></pre></div>
 <p><img src="chilemapas_files/figure-html/unnamed-chunk-3-1.png" width="960"></p>
 </div>
 <div id="graficar-zonas" class="section level2">
 <h2 class="hasAnchor">
 <a href="#graficar-zonas" class="anchor"></a>Graficar zonas</h2>
 <p>Se provee un dataset de todas las zonas urbanas (agregación de manzanas) contempladas en el CENSO.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit">
-<span class="va">zonas_valdivia</span> <span class="op">&lt;-</span> <span class="va">mapa_zonas</span> <span class="op">%&gt;%</span> 
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">zonas_valdivia</span> <span class="op">&lt;-</span> <span class="va">mapa_zonas</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">codigo_comuna</span> <span class="op">==</span> <span class="st">"14101"</span><span class="op">)</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">inner_join</a></span><span class="op">(</span>
     <span class="va">censo_2017_zonas</span> <span class="op">%&gt;%</span> 
@@ -202,6 +205,7 @@
         <span class="fu"><a href="https://rdrr.io/r/base/integer.html">as.integer</a></span><span class="op">(</span><span class="va">edad</span><span class="op">)</span> <span class="op">&gt;=</span> <span class="fl">4</span>
       <span class="op">)</span>
   <span class="op">)</span>
+<span class="co">#&gt; old-style crs object detected; please recreate object with a recent sf::st_crs()</span>
 <span class="co">#&gt; Joining, by = "geocodigo"</span>
 
 <span class="va">paleta</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"#628ca5"</span>, <span class="st">"#dca761"</span><span class="op">)</span>
@@ -214,7 +218,7 @@
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/lims.html">xlim</a></span><span class="op">(</span><span class="op">-</span><span class="fl">73.4</span>, <span class="op">-</span><span class="fl">73.17</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradientn</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="va">paleta</span>, name <span class="op">=</span> <span class="st">"Población"</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Poblacion de 65 anios y mas en la Comuna de Valdivia"</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">13</span><span class="op">)</span></pre></div>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">13</span><span class="op">)</span></code></pre></div>
 <p><img src="chilemapas_files/figure-html/unnamed-chunk-4-1.png" width="960"></p>
 </div>
 </div>
