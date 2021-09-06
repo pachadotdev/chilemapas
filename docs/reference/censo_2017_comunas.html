@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">chilemapas</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
       </span>
     </div>
 
@@ -80,7 +80,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -90,11 +90,14 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/pachamaltese/chilemapas/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -139,20 +142,20 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='va'>censo_2017_comunas</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 14,532 x 4</span><span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 14,532 × 4</span>
 #&gt;    codigo_comuna edad      sexo   poblacion
-#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>         </span><span style='color: #949494;font-style: italic;'>&lt;fct&gt;</span><span>     </span><span style='color: #949494;font-style: italic;'>&lt;fct&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> 01101         0 a 4     hombre      </span><span style='text-decoration: underline;'>7</span><span>186
-#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> 01101         10 a 14   hombre      </span><span style='text-decoration: underline;'>6</span><span>410
-#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> 01101         100 o mas hombre        15
-#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> 01101         15 a 19   hombre      </span><span style='text-decoration: underline;'>6</span><span>597
-#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> 01101         20 a 24   hombre      </span><span style='text-decoration: underline;'>7</span><span>574
-#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> 01101         25 a 29   hombre      </span><span style='text-decoration: underline;'>8</span><span>896
-#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> 01101         30 a 34   hombre      </span><span style='text-decoration: underline;'>8</span><span>180
-#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> 01101         35 a 39   hombre      </span><span style='text-decoration: underline;'>7</span><span>393
-#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> 01101         40 a 44   hombre      </span><span style='text-decoration: underline;'>6</span><span>586
-#&gt; </span><span style='color: #BCBCBC;'>10</span><span> 01101         45 a 49   hombre      </span><span style='text-decoration: underline;'>5</span><span>696
-#&gt; </span><span style='color: #949494;'># … with 14,522 more rows</span><span></div></span></pre>
+#&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>         <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>
+#&gt; <span style='color: #BCBCBC;'> 1</span> 01101         0 a 4     hombre      <span style='text-decoration: underline;'>7</span>186
+#&gt; <span style='color: #BCBCBC;'> 2</span> 01101         10 a 14   hombre      <span style='text-decoration: underline;'>6</span>410
+#&gt; <span style='color: #BCBCBC;'> 3</span> 01101         100 o mas hombre        15
+#&gt; <span style='color: #BCBCBC;'> 4</span> 01101         15 a 19   hombre      <span style='text-decoration: underline;'>6</span>597
+#&gt; <span style='color: #BCBCBC;'> 5</span> 01101         20 a 24   hombre      <span style='text-decoration: underline;'>7</span>574
+#&gt; <span style='color: #BCBCBC;'> 6</span> 01101         25 a 29   hombre      <span style='text-decoration: underline;'>8</span>896
+#&gt; <span style='color: #BCBCBC;'> 7</span> 01101         30 a 34   hombre      <span style='text-decoration: underline;'>8</span>180
+#&gt; <span style='color: #BCBCBC;'> 8</span> 01101         35 a 39   hombre      <span style='text-decoration: underline;'>7</span>393
+#&gt; <span style='color: #BCBCBC;'> 9</span> 01101         40 a 44   hombre      <span style='text-decoration: underline;'>6</span>586
+#&gt; <span style='color: #BCBCBC;'>10</span> 01101         45 a 49   hombre      <span style='text-decoration: underline;'>5</span>696
+#&gt; <span style='color: #949494;'># … with 14,522 more rows</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
