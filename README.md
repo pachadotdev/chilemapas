@@ -1,4 +1,4 @@
-# chilemapas <img src="https://pachamaltese.github.io/chilemapas/hexicon.svg" width=150 align="right" alt="sticker"/>
+# chilemapas
 
 <!-- badges: start -->
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
