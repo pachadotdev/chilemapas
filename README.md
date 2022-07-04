@@ -64,4 +64,4 @@ con los diputados y senadores que les asigna la ley.
 
 # Contribuciones
 
-Todos los aportes son bienvenidos. La única condición es respetar el [Codigo de Conducta](https://github.com/pachadotdev/censo2017/blob/main/CODE_OF_CONDUCT.md).
+Todos los aportes son bienvenidos. La única condición es respetar el [Codigo de Conducta](https://github.com/pachadotdev/chilemapas/blob/main/CODE_OF_CONDUCT.md).
