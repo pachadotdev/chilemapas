@@ -1,23 +1,25 @@
 {
-  "@context": [
-    "https://doi.org/10.5063/schema/codemeta-2.0",
-    "http://schema.org"
-  ],
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
   "identifier": "chilemapas",
-  "description": "Mapas terrestres con topologias simplificadas. Estos mapas no \n  tienen precision geodesica, por lo que aplica el DFL-83 de 1979 de la Republica\n  de Chile y se consideran referenciales sin validez legal.\n  No se incluyen los territorios antarticos y bajo ningun evento estos mapas\n  significan que exista una cesion u ocupacion de territorios soberanos en\n  contra del Derecho Internacional por parte de Chile. Esta paquete esta \n  documentado intencionalmente en castellano asciificado para que funcione sin \n  problema en diferentes plataformas.\n  (Terrestrial maps with simplified toplogies. These maps lack geodesic\n  precision, therefore DFL-83 1979 of the Republic of Chile applies and are\n  considered to have no legal validity.\n  Antartic territories are excluded and under no event these maps mean\n  there is a cession or occupation of sovereign territories against International\n  Laws from Chile. This package was intentionally documented in asciified\n  spanish to make it work without problem on different platforms.)",
+  "description": "Mapas terrestres con topologias simplificadas. Estos mapas no tienen precision geodesica, por lo que aplica el DFL-83 de 1979 de la Republica de Chile y se consideran referenciales sin validez legal. No se incluyen los territorios antarticos y bajo ningun evento estos mapas significan que exista una cesion u ocupacion de territorios soberanos en contra del Derecho Internacional por parte de Chile. Esta paquete esta documentado intencionalmente en castellano asciificado para que funcione sin problema en diferentes plataformas. (Terrestrial maps with simplified toplogies. These maps lack geodesic precision, therefore DFL-83 1979 of the Republic of Chile applies and are considered to have no legal validity. Antartic territories are excluded and under no event these maps mean there is a cession or occupation of sovereign territories against International Laws from Chile. This package was intentionally documented in asciified spanish to make it work without problem on different platforms.)",
   "name": "chilemapas: Mapas de las Divisiones Politicas y Administrativas de Chile\n    (Maps of the Political and Administrative Divisions of Chile)",
-  "codeRepository": "https://pachamaltese.github.io/chilemapas/",
-  "issueTracker": "https://github.com/pachamaltese/chilemapas/issues",
+  "codeRepository": "https://github.com/pachadotdev/chilemapas",
+  "issueTracker": "https://github.com/pachadotdev/chilemapas/issues/",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "0.2",
+  "version": "0.3.0",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
-    "version": "3.6.3",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 3.6.3 (2020-02-29)",
+  "runtimePlatform": "R version 4.2.0 (2022-04-22)",
+  "provider": {
+    "@id": "https://cran.r-project.org",
+    "@type": "Organization",
+    "name": "Comprehensive R Archive Network (CRAN)",
+    "url": "https://cran.r-project.org"
+  },
   "author": [
     {
       "@type": "Person",
@@ -66,7 +68,6 @@
       "name": "Pontificia Universidad Catolica de Chile"
     }
   ],
-  "funder": {},
   "maintainer": [
     {
       "@type": "Person",
@@ -125,14 +126,14 @@
       "sameAs": "https://CRAN.R-project.org/package=testthat"
     }
   ],
-  "softwareRequirements": [
-    {
+  "softwareRequirements": {
+    "1": {
       "@type": "SoftwareApplication",
       "identifier": "R",
       "name": "R",
       "version": ">= 3.5.0"
     },
-    {
+    "2": {
       "@type": "SoftwareApplication",
       "identifier": "sf",
       "name": "sf",
@@ -144,7 +145,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=sf"
     },
-    {
+    "3": {
       "@type": "SoftwareApplication",
       "identifier": "rmapshaper",
       "name": "rmapshaper",
@@ -156,7 +157,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=rmapshaper"
     },
-    {
+    "4": {
       "@type": "SoftwareApplication",
       "identifier": "dplyr",
       "name": "dplyr",
@@ -168,7 +169,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=dplyr"
     },
-    {
+    "5": {
       "@type": "SoftwareApplication",
       "identifier": "magrittr",
       "name": "magrittr",
@@ -180,7 +181,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=magrittr"
     },
-    {
+    "6": {
       "@type": "SoftwareApplication",
       "identifier": "stringr",
       "name": "stringr",
@@ -192,7 +193,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=stringr"
     },
-    {
+    "7": {
       "@type": "SoftwareApplication",
       "identifier": "rlang",
       "name": "rlang",
@@ -203,17 +204,14 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=rlang"
-    }
-  ],
-  "readme": "https://github.com/pachamaltese/chilemapas/blob/master/README.md",
-  "fileSize": "1789.397KB",
-  "contIntegration": "https://codecov.io/gh/pachamaltese/chilemapas?branch=master",
-  "developmentStatus": "https://www.repostatus.org/#active",
-  "provider": {
-    "@id": "https://cran.r-project.org",
-    "@type": "Organization",
-    "name": "Comprehensive R Archive Network (CRAN)",
-    "url": "https://cran.r-project.org"
+    },
+    "SystemRequirements": null
   },
-  "relatedLink": "https://CRAN.R-project.org/package=chilemapas"
+  "fileSize": "1895.215KB",
+  "relatedLink": ["https://pacha.dev/chilemapas/", "https://CRAN.R-project.org/package=chilemapas"],
+  "releaseNotes": "https://github.com/pachadotdev/chilemapas/blob/master/NEWS.md",
+  "readme": "https://github.com/pachadotdev/chilemapas/blob/master/README.md",
+  "contIntegration": ["https://codecov.io/gh/pachadotdev/chilemapas?branch=master", "https://github.com/pachadotdev/chilemapas/actions/workflows/R-CMD-check.yaml"],
+  "developmentStatus": ["https://www.repostatus.org/#active", "https://www.tidyverse.org/lifecycle/#maturing"],
+  "keywords": ["r", "chile", "maps", "topojson", "geojson", "tidyverse"]
 }
