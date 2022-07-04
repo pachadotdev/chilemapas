@@ -13,6 +13,6 @@ docs
 README.Rmd
 README.md
 LICENSE.md
-.github
 ^codemeta\.json$
 CODE_OF_CONDUCT.md
+^\.github$

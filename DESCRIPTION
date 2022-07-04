@@ -2,7 +2,7 @@ Package: chilemapas
 Type: Package
 Title: Mapas de las Divisiones Politicas y Administrativas de Chile
     (Maps of the Political and Administrative Divisions of Chile)
-Version: 0.2.1
+Version: 0.3.0
 Authors@R: c(
     person("Mauricio", "Vargas", role = c("aut", "cre"),
       email = "mvargas@dcc.uchile.cl"),
@@ -21,8 +21,8 @@ Authors@R: c(
     person(family = "Biblioteca del Congreso Nacional de Chile (BCN)",
       role = "dtc")
     )
-URL: https://pachamaltese.github.io/chilemapas/
-BugReports: https://github.com/pachamaltese/chilemapas/issues
+URL: https://pacha.dev/chilemapas/
+BugReports: https://github.com/pachadotdev/chilemapas/issues/
 Description: Mapas terrestres con topologias simplificadas. Estos mapas no 
   tienen precision geodesica, por lo que aplica el DFL-83 de 1979 de la Republica
   de Chile y se consideran referenciales sin validez legal.
@@ -42,7 +42,7 @@ License: GPL-3
 Encoding: UTF-8
 LazyData: true
 VignetteBuilder: knitr
-RoxygenNote: 7.1.1.9000
+RoxygenNote: 7.2.0
 Depends: R(>= 3.5.0), sf
 Imports: rmapshaper, dplyr, magrittr, stringr, rlang
 Suggests: 

@@ -3,9 +3,9 @@
 <!-- badges: start -->
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![Codecov test coverage](https://codecov.io/gh/pachamaltese/chilemapas/branch/master/graph/badge.svg)](https://codecov.io/gh/pachamaltese/chilemapas?branch=master)
+[![Codecov test coverage](https://codecov.io/gh/pachadotdev/chilemapas/branch/master/graph/badge.svg)](https://codecov.io/gh/pachadotdev/chilemapas?branch=master)
 [![CRAN status](https://www.r-pkg.org/badges/version/chilemapas)](https://cran.r-project.org/package=chilemapas)
-[![R build status](https://github.com/pachamaltese/chilemapas/workflows/R-CMD-check/badge.svg)](https://github.com/pachamaltese/chilemapas/actions?workflow=R-CMD-check)
+[![R-CMD-check](https://github.com/pachadotdev/chilemapas/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/pachadotdev/chilemapas/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 # Acerca de
@@ -42,7 +42,7 @@ install.packages("chilemapas")
 ## Version de desarrollo
 ```
 # install.packages("remotes")
-remotes::install_github("pachamaltese/chilemapas")
+remotes::install_github("pachadotdev/chilemapas")
 ```
 
 # Mapas en geojson y topojson
@@ -64,4 +64,4 @@ con los diputados y senadores que les asigna la ley.
 
 # Contribuciones
 
-Todos los aportes son bienvenidos. La única condición es respetar el [Codigo de Conducta](https://github.com/pachamaltese/censo2017/blob/main/CODE_OF_CONDUCT.md).
+Todos los aportes son bienvenidos. La única condición es respetar el [Codigo de Conducta](https://github.com/pachadotdev/censo2017/blob/main/CODE_OF_CONDUCT.md).
