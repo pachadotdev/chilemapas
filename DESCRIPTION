@@ -5,7 +5,7 @@ Title: Mapas de las Divisiones Politicas y Administrativas de Chile
 Version: 0.3.0
 Authors@R: c(
     person("Mauricio", "Vargas", role = c("aut", "cre"),
-      email = "mvargas@dcc.uchile.cl"),
+      email = "mavargas11@uc.cl"),
     person("Roberto", "Salas", role = "ctb"),
     person("Joshua", "Kunst", role = "ctb"),
     person("Juan", "Correa", role = "dtc"),

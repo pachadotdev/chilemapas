@@ -25,7 +25,7 @@
       "@type": "Person",
       "givenName": "Mauricio",
       "familyName": "Vargas",
-      "email": "mvargas@dcc.uchile.cl"
+      "email": "mavargas11@uc.cl"
     }
   ],
   "contributor": [
@@ -73,7 +73,7 @@
       "@type": "Person",
       "givenName": "Mauricio",
       "familyName": "Vargas",
-      "email": "mvargas@dcc.uchile.cl"
+      "email": "mavargas11@uc.cl"
     }
   ],
   "softwareSuggestions": [
@@ -207,7 +207,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "1895.215KB",
+  "fileSize": "1895.465KB",
   "relatedLink": ["https://pacha.dev/chilemapas/", "https://CRAN.R-project.org/package=chilemapas"],
   "releaseNotes": "https://github.com/pachadotdev/chilemapas/blob/master/NEWS.md",
   "readme": "https://github.com/pachadotdev/chilemapas/blob/master/README.md",
