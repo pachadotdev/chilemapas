@@ -1,6 +1,7 @@
 context("testthat.R")
 
 test_that("chilemapas datasets can be aggregated", {
+  skip_on_cran() # takes > 30 seconds
   library(dplyr)
   r14 <- filter(chilemapas::mapa_comunas, codigo_region == 14)
 
