@@ -1,3 +1,8 @@
+# chilemapas 0.3.1
+
+* Relicensed as Apache 2.0.
+* Adds "lang: es" to the vignette to fix archival issue.
+
 # chilemapas 0.3.0
 
 * Converts ols CRS and makes CRS: EPSG:4674 - SIRGAS 2000 - Geographic explicit

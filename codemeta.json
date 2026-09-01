@@ -7,7 +7,7 @@
   "codeRepository": "https://github.com/pachadotdev/chilemapas",
   "issueTracker": "https://github.com/pachadotdev/chilemapas/issues/",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",

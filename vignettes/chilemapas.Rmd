@@ -7,6 +7,7 @@ vignette: >
   %\VignetteIndexEntry{Uso basico del paquete chilemapas}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+lang: es
 ---
 
 ```{r setup, include = FALSE}
